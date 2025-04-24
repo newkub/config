@@ -1,0 +1,30 @@
+{
+	"name": "template-starter",
+	"version": "0.1.0",
+	"type": "module",
+	"workspaces": ["packages/*", "templates/*", "cli", "docs"],
+	"packageManager": "bun@1.2.10",
+	"private": true,
+	"scripts": {
+		"dev": "turbo dev",
+		"build": "turbo build",
+		"start": "turbo start",
+		"format": "biome format write && turbo format",
+		"lint": "biome check --write . && tsc --noEmit && turbo lint",
+		"aifix": "",
+		"update": "taze",
+		"check": "knip",
+		"test": "vitest && turbo test",
+		"release": "release-it",
+		"deploy": "turbo deploy"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"knip": "^5.50.5",
+		"release-it": "^19.0.1",
+		"taze": "^19.0.4",
+		"turbo": "2.4.4",
+		"typescript": "^5.8.3",
+		"vitest": "^3.1.2"
+	}
+}
