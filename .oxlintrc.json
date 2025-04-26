@@ -1,5 +1,5 @@
 {
-	"$schema": "oxoxlint/configuration_schema.json",
+	"$schema": "oxl",
 	"plugins": [
 		"oxc",
 		"react",
