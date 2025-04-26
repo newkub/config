@@ -1,5 +1,5 @@
 {
-	"$schema": "",
+	"$schema": "o",
 	"plugins": [
 		"oxc",
 		"react",
