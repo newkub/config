@@ -9,7 +9,7 @@
 		"prepare": "lefthook install",
         		"format": "biome format --write .",
 
-		"lint": "biome lint --lint . && tsc --noEmit"
+		"lint": "biome lint --lintnt . && tsc --noEmit"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
