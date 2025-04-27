@@ -7,7 +7,6 @@
 		"test": "bun test || true",
 		"prepare": "lefthook install",
         		"format": "biome format --write .",
-
 		"lint": "biome lint --lintnt . && tsc --noEmit"
 	},
 	"devDependencies": {
