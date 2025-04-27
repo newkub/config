@@ -8,7 +8,7 @@
 		"test": "bun test || true",
 		"format": "biome format --write .",
 		"prepare": "lefthook install",
-		"lint": "biome lint --li . && tsc --noEmit"
+		"lint": "biome lint --lint . && tsc --noEmit"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
