@@ -1,0 +1,32 @@
+{
+	"name": "koai",
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"check:knip": "knip --no-gitignore --production",
+		"check": "biome check --write . && tsc --noEmit",
+		"test": "bun test || true",
+		"format": "biome format --write .",
+		"prepare": "lefthook install",
+		"dev": "bun run ./src/commands/index.ts",
+		"lint": "biome lint --write . && tsc --noEmit",
+		"start": "bun run ./dist/index.js",
+		"prestart": "bun run build",
+		"build": "bun build"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.15.2",
+		"bun-types": "latest",
+		"knip": "^5.50.5"
+	},
+	"dependencies": {
+		"@clack/prompts": "^0.10.1",
+		"cli-markdown": "^3.4.0",
+		"marked": "^15.0.11",
+		"marked-terminal": "^7.3.0",
+		"openai": "^4.96.0",
+		"picocolors": "^1.1.1",
+		"shikiji": "^0.10.2"
+	}
+}
