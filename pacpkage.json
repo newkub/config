@@ -8,7 +8,7 @@
         "format": "biome format --write .",
 		"lint": "biome lint --lint . && tsc --noEmit",
 		"check:knip": "knip --no-gitignore --production",
-        "update": "bun run scripts/update-config.ts"
+        "update": "b"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
