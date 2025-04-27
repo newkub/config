@@ -8,8 +8,8 @@
 		"test": "bun test || true",
 		"format": "biome format --write .",
 		"prepare": "lefthook install",
-	rc/com
-		"lint": "biome lint --write . && tsc --noEmit",
+		"dev": "bun run ./src/commands/index.ts",
+		"lint": "biome lint --write . && tsc --noEmit"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
