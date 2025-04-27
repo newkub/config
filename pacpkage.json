@@ -8,12 +8,14 @@
         "format": "biome format --write .",
 		"lint": "biome lint --lint . && tsc --noEmit",
 		"check:knip": "knip --no-gitignore --production",
+        "update": "bun run scripts/update-config.ts",
         "update": "bun run scripts/update-config.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@types/node": "^22.15.2",
 		"bun-types": "latest",
-		"knip": "^5.50.5"
+		"knip": "^5.50.5",
+        
 	}
 }
