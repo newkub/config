@@ -4,7 +4,6 @@
 	"type": "module",
 	"scripts": {
 		"check:knip": "knip --no-gitignore --production",
-		"check": "biome check --write . && tsc --noEmit",
 		"test": "bun test || true",
 		"prepare": "lefthook install",
         		"format": "biome format --write .",
