@@ -11,7 +11,7 @@
 		"dev": "bun run ./src/commands/index.ts",
 		"lint": "biome lint --write . && tsc --noEmit",
 	
-		"prestart": "bun run build",
+		
 		"build": "bun build"
 	},
 	"devDependencies": {
