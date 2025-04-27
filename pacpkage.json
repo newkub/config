@@ -10,9 +10,6 @@
 		"prepare": "lefthook install",
 	rc/com
 		"lint": "biome lint --write . && tsc --noEmit",
-	
-		
-		"build": "bun build"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
