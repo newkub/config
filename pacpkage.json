@@ -10,7 +10,7 @@
 		"prepare": "lefthook install",
 		"dev": "bun run ./src/commands/index.ts",
 		"lint": "biome lint --write . && tsc --noEmit",
-		"start": "bun run ./dist/index.js",
+	
 		"prestart": "bun run build",
 		"build": "bun build"
 	},
