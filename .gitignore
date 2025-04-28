@@ -1,0 +1,28 @@
+# Turborepo
+.turbo
+
+dist
+cache
+# Bun
+node_modules
+.bun.lockb
+
+# TypeScript
+*.map
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+logs
+*.log
+
+# Editor directories and files
+
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
