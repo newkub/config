@@ -1,5 +1,4 @@
 import { defineConfig, presetIcons, presetWind4, transformerVariantGroup, presetWebFonts } from "unocss";
-import { presetScrollbar } from "unocss-preset-scrollbar";
 import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local';
 
 export default defineConfig({
