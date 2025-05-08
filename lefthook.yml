@@ -11,4 +11,4 @@ pre-push:
   parallel: true
   jobs:
     - name: lint
-      run: bunx biome check --fix . && bunx vue-tsc --noEmit
+      run: bun biome lint --write . && bun tsc --noEmit
