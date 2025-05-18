@@ -8,7 +8,6 @@ import AutoImport from "unplugin-auto-import/vite";
 import UnpluginUnused from 'unplugin-unused/vite';
 
 export default defineConfig({
-    base: 'https://utc.yuy1n.io/',
     plugins: [
         vueDevTools(),
         AutoImport(),
@@ -65,3 +64,6 @@ checker({
                 ".gitconfig": "logos:git-icon",
                 ".gitignore": "logos:git-icon",
             },
+        }),
+    ],
+});
