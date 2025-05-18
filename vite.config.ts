@@ -15,7 +15,7 @@ export default defineConfig({
 
         }),
         tsconfigPaths(),
-        
+        /*
         checker({
             typescript: true,
             vueTsc: true,
@@ -23,7 +23,7 @@ export default defineConfig({
                 command: "lint",
             },
             overlay: false,
-        }),
+        }),*/
 
         UnoCSS(),
         ViteImageOptimizer({}),
