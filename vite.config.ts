@@ -12,7 +12,6 @@ export default defineConfig({
         AutoImport({
             dirs: [".vitepress/components", "components"],
 
-
         }),
         tsconfigPaths(),
         
