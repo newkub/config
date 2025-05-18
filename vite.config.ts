@@ -58,3 +58,12 @@ checker({
                 "biome.json": "devicon:biome",
                 vscode: "devicon:vscode",
                 vitest: "logos:vitest",
+                tailwind: "logos:tailwindcss",
+                terminal: "logos:terminal",
+                git: "logos:git-icon",
+                ".gitconfig": "logos:git-icon",
+                ".gitignore": "logos:git-icon",
+            },
+        }),
+    ],
+});
