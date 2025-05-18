@@ -66,13 +66,6 @@ export default defineConfig({
     ],
 });
 
-import tsconfigPaths from 'vite-tsconfig-paths'
-                ".gitignore": "logos:git-icon",
-            },
-        }),
-    ],
-});
-
 		UnpluginUnused(),
 		TurboConsole(),
 		groupIconVitePlugin({
