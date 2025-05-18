@@ -9,10 +9,7 @@ import AutoImport from "unplugin-auto-import/vite";
 export default defineConfig({
     plugins: [
         vueDevTools(),
-        AutoImport({
-            dirs: [".vitepress/components", "components"],
-
-        }),
+        AutoImport({),
         tsconfigPaths(),
         
         checker({
