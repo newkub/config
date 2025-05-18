@@ -6,7 +6,6 @@ import vueDevTools from "vite-plugin-vue-devtools";
 import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 import AutoImport from "unplugin-auto-import/vite";
 import UnpluginUnused from 'unplugin-unused/vite';
-import Turbo from 'unplugin-turbo/vite';
 
 export default defineConfig({
     plugins: [
@@ -23,7 +22,6 @@ checker({
         }),
         UnoCSS(),
         UnpluginUnused(),
-        Turbo(),
         ViteImageOptimizer({}),
         groupIconVitePlugin({
             customIcon: {
@@ -54,12 +52,22 @@ checker({
                 deno: "vscode-icons:file-type-deno",
                 vite: "logos:vitejs",
                 esbuild: "logos:esbuild",
-                powershell: "vscode-icons:file-type-powershell",tePlugin } from "vitepress-plugin-group-icons";
-import UnpluginUnused from 'unplugin-unused/vite'
-import TurboConsole from 'unplugin-turbo-console/vite'
+                powershell: "vscode-icons:file-type-powershell",
+                "uno.config.ts": "logos:unocss",
+                turbo: "vscode-icons:file-type-turbo",
+                "biome.json": "devicon:biome",
+                vscode: "devicon:vscode",
+                vitest: "logos:vitest",
+                tailwind: "logos:tailwindcss",
+                terminal: "logos:terminal",
+                git: "logos:git-icon",
+                ".gitconfig": "logos:git-icon",
+                ".gitignore": "logos:git-icon",
+            },
+        }),
+    ],
+});
 
-export default defineConfig({
-	plugins: [
 		UnoCSS(),
 		UnpluginUnused(),
 		TurboConsole(),
