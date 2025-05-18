@@ -7,11 +7,7 @@ import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 import AutoImport from "unplugin-auto-import/vite";
 
 export default defineConfig({
-    build: {
-        rollupOptions: {
-            external: ["@stackblitz/sdk"],
-        },
-    },
+    
 
     plugins: [
         vueDevTools(),
