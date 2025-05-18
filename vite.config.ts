@@ -24,7 +24,6 @@ export default defineConfig({
             },
             overlay: false,
         }),
-
         UnoCSS(),
         ViteImageOptimizer({}),
         groupIconVitePlugin({
