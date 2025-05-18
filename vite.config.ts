@@ -25,6 +25,8 @@ export default defineConfig({
         UnoCSS(),
         ViteImageOptimizer({}),
         UnpluginUnused(),
+        TurboConsole(),
+
         groupIconVitePlugin({
             customIcon: {
                 "tsconfig.json": "vscode-icons:file-type-typescript",
