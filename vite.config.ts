@@ -11,7 +11,6 @@ export default defineConfig({
         vueDevTools(),
         AutoImport(),
         tsconfigPaths(),
-    
         checker({
             typescript: true,
             vueTsc: true,
