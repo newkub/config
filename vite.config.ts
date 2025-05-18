@@ -11,3 +11,22 @@ import TurboConsole from 'unplugin-turbo-console/vite'
 
 export default defineConfig({
     plugins: [
+        vueDevTools(),
+        AutoImport(),
+        tsconfigPaths(),
+        checker({
+            typescript: true,
+            vueTsc: true,
+            biome: {
+                command: "lint",
+            },
+            overlay: false,
+        }),
+        UnoCSS(),
+        ViteImageOptimizer({}),
+        UnpluginUnused(),
+        groupIconVitePlugin({
+            customIcon: {
+                "tsconfig.json": "vscode-icons:file-type-typescript",
+                "vite.config.ts": "vscode-icons:file-type-vite",
+                ".env": "vscode-icons:file-type-dotenv",
