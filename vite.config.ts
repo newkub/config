@@ -23,7 +23,7 @@ export default defineConfig({
                 command: "lint",
             },
             overlay: false,
-        }),*/
+        }),
 
         UnoCSS(),
         ViteImageOptimizer({}),
