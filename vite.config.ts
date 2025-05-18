@@ -21,3 +21,13 @@ checker({
             },
             overlay: false,
         }),
+        UnoCSS(),
+        UnpluginUnused(),
+        ViteImageOptimizer({}),
+        groupIconVitePlugin({
+            customIcon: {
+                "tsconfig.json": "vscode-icons:file-type-typescript",
+                "vite.config.ts": "vscode-icons:file-type-vite",
+                ".env": "vscode-icons:file-type-dotenv",
+                ".mdx": "vscode-icons:file-type-light-mdx",
+                html: "vscode-icons:file-type-html",
