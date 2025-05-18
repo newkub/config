@@ -49,4 +49,6 @@ export default defineConfig({
                 toml: "logos:toml",
                 solid: "logos:solidjs-icon",
                 rollup: "logos:rollupjs",
-                
+                turbo: "logos:turbo",
+            },
+        }),
