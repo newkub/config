@@ -7,7 +7,6 @@ import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 import AutoImport from "unplugin-auto-import/vite";
 
 export default defineConfig({
-    
     plugins: [
         vueDevTools(),
         AutoImport({
@@ -16,7 +15,7 @@ export default defineConfig({
 
         }),
         tsconfigPaths(),
-        /*
+        
         checker({
             typescript: true,
             vueTsc: true,
