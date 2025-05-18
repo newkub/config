@@ -15,15 +15,15 @@ export default defineConfig({
 
         }),
         tsconfigPaths(),
-        /*
+        
         checker({
             typescript: true,
             vueTsc: true,
-            biome: {s
+            biome: {
                 command: "lint",
             },
             overlay: false,
-        }),*/
+        }),
 
         UnoCSS(),
         ViteImageOptimizer({}),
