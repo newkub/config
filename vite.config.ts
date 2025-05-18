@@ -52,5 +52,6 @@ export default defineConfig({
                 rollup: "logos:rollupjs",
             },
         }),
+        TurboConsole(),
     ],
 });
