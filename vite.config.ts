@@ -8,7 +8,6 @@ export default defineConfig({
 	plugins: [
 		UnoCSS(),
 		UnpluginUnused(),
-		TurboConsole(),
 		groupIconVitePlugin({
 			customIcon: {
 				"tsconfig.json": "vscode-icons:file-type-typescript",
