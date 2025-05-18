@@ -15,10 +15,10 @@ export default defineConfig({
         tsconfigPaths(),
         checker({
             typescript: true,
-            vueTsc: true,
-            biome: {
-                command: "lint",
-            },
+                                vueTsc: true,
+                                                                            biome: {
+                                        command: "lint",
+                                                                                                                },
             overlay: false,
         }),
         UnoCSS(),
