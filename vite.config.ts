@@ -44,3 +44,8 @@ export default defineConfig({
                 vue: "logos:vue",
                 svelte: "logos:svelte-icon",
                 angular: "logos:angular-icon",
+                next: "logos:nextjs-icon",
+                nuxt: "logos:nuxt-icon",
+                toml: "logos:toml",
+                solid: "logos:solidjs-icon",
+                rollup: "logos:rollupjs",
