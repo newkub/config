@@ -63,8 +63,7 @@ export default defineConfig({
                 ".gitignore": "logos:git-icon",
             },
         }),
-        
+
     ],
 });
 
-		
