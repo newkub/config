@@ -362,23 +362,6 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 2. **CSS Variables for Theming**
-   ```ts
-   // uno.config.ts (theme section)
-   export default defineConfig({
-     // Other config...
-     theme: {
-       colors: {
-         primary: 'var(--primary-color, #3498db)',
-         secondary: 'var(--secondary-color, #2ecc71)',
-         text: 'var(--text-color, #333)'
-       },
-       spacing: {
-         unit: 'var(--spacing-unit, 8px)'
-       }
-     }
-     </button>
-   </template>
-   ```
 
 4. **Component-specific Styling with UnoCSS Shortcuts**
    ```ts
