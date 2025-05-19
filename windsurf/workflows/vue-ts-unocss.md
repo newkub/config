@@ -10,3 +10,11 @@ Please help refactor my codebase with the following steps:
    - Consolidate similar functionality into shared Vue composables
    - Extract common patterns into reusable TypeScript modules
    - Merge overlapping type definitions into unified interfaces
+   - Replace repetitive type assertions with custom type guards
+   - Implement memoization for expensive computations
+   - Extract repeated UnoCSS patterns into custom utilities
+
+2. **Improve code architecture**
+   - Leverage TypeScript's type system:
+     - Use Vue's Composition API with proper typing
+     - Create pure functions with explicit return types
