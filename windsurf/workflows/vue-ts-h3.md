@@ -237,3 +237,28 @@ This guide outlines best practices for developing Vue.js applications:
 ## API Integration
 
 1. **Create API client with h3**
+   ```ts
+   // api/client.ts
+   import { $fetch } from 'ofetch'
+   
+   const apiClient = $fetch.create({
+     baseURL: import.meta.env.VITE_API_URL,
+     credentials: 'include',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     onRequest({ options }) {
+       const token = localStorage.getItem('auth_token')
+       if (token) {
+         options.headers = {
+           ...options.headers,
+           Authorization: `Bearer ${token}`
+         }
+       }
+     }
+   })
+   
+   export default apiClient
+   ```
+
+2. **Implement API services**
