@@ -351,6 +351,49 @@ This guide outlines best practices for developing Vue.js applications:
    
 ## Styling Best Practices
 
+1. **Style Reset with UnoCSS Built-in Preflights**
+   ```ts
+   // uno.config.ts
+   import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
+   
+   export default defineConfig({
+     presets: [
+       presetUno(), // Includes built-in preflights for style reset
+       presetAttributify(),
+       presetIcons()
+     ]
+   })
+   ```
+
+2. **CSS Variables for Theming**
+   ```ts
+   // uno.config.ts (theme section)
+   export default defineConfig({
+     // Other config...
+     theme: {
+       colors: {
+         primary: 'var(--primary-color, #3498db)',
+         secondary: 'var(--secondary-color, #2ecc71)',
+         text: 'var(--text-color, #333)'
+       },
+       spacing: {
+         unit: 'var(--spacing-unit, 8px)'
+       }
+     }
+   })
+   ```
+
+3. **Utility-first Approach with UnoCSS**
+   ```vue
+   <template>
+     <button class="bg-primary hover:bg-primary/80 text-white font-bold py-2 px-4 rounded transition">
+       Submit
+     </button>
+   </template>
+   ```
+
+4. **Component-specific Styling with UnoCSS Shortcuts**
+
 ## Accessibility
 
 1. **Semantic HTML**
