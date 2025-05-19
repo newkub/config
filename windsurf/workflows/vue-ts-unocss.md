@@ -133,26 +133,33 @@ Please help refactor my codebase with the following steps:
    ```
    src/
    ├── assets/                 # Static assets
-   ├── components/             # Shared components
+   ├── components/             # Auto-imported shared components
    │   ├── ui/                 # UI components
    │   └── layout/             # Layout components
-   ├── composables/            # Vue composables
-   │   └── index.ts            # Barrel file for composables
-   ├── features/               # Feature modules
-   │   ├── auth/               # Authentication feature
-   │   │   ├── components/     # Auth-specific components
-   │   │   ├── composables/    # Auth-specific composables
-   │   │   ├── types/          # Auth-specific types
-   │   │   └── index.ts        # Barrel file for auth feature
-   │   └── products/           # Products feature
-   │       ├── components/     # Product-specific components
-   │       ├── composables/    # Product-specific composables
-   │       ├── types/          # Product-specific types
-   │       └── index.ts        # Barrel file for products feature
+   ├── composables/            # Auto-imported Vue composables
+   │   └── index.ts            # Optional barrel file
+   ├── modules/                # Feature modules (similar to Nuxt modules)
+   │   ├── auth/               # Authentication module
+   │   │   ├── components/     # Auto-imported module components
+   │   │   ├── composables/    # Auto-imported module composables
+   │   │   ├── types/          # Module type definitions
+   │   │   └── index.ts        # Module entry point
+   │   └── products/           # Products module
+   │       ├── components/     # Auto-imported module components
+   │       ├── composables/    # Auto-imported module composables
+   │       ├── types/          # Module type definitions
+   │       └── index.ts        # Module entry point
+   ├── pages/                  # File-based routing (like Nuxt)
+   │   ├── index.vue           # Home page
+   │   └── [id].vue            # Dynamic route
+   ├── layouts/                # Page layouts (like Nuxt)
+   │   └── default.vue         # Default layout
+   ├── middleware/             # Route middleware (like Nuxt)
+   ├── stores/                 # Pinia stores
+   ├── plugins/                # App plugins
+   ├── public/                 # Public static assets
    ├── types/                  # Global type definitions
-   │   └── index.ts            # Barrel file for types
-   ├── utils/                  # Utility functions
-   │   └── index.ts            # Barrel file for utilities
+   ├── utils/                  # Auto-imported utility functions
    ├── App.vue                 # Root component
    └── main.ts                 # Application entry point
    ```
