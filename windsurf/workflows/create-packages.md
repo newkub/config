@@ -154,3 +154,20 @@ This workflow guides you through creating and publishing packages using modern J
    ```
 
 4. **Git Hooks**
+   ```bash
+   bun add -d lefthook
+   bunx lefthook install
+   ```
+
+5. **Package Exports Configuration**
+   ```json
+   "exports": {
+     ".": {
+       "import": "./dist/index.js",
+       "types": "./dist/index.d.ts"
+     },
+     "./cli": {
+       "import": "./dist/cli.js",
+       "types": "./dist/cli.d.ts"
+     }
+   }
