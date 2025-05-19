@@ -94,3 +94,63 @@ This workflow guides you through creating and publishing packages using modern J
    ```
 
 2. **Configure in package.json**
+   ```json
+   "release-it": {
+     "git": {
+       "commitMessage": "chore: release v${version}",
+       "tagName": "v${version}"
+     },
+     "npm": {
+       "publish": true
+     },
+     "github": {
+       "release": true
+     }
+   }
+   ```
+
+3. **Add release script**
+   ```json
+   "scripts": {
+     "release": "bun run build && release-it"
+   }
+   ```
+
+## Publishing Process
+
+1. **Build package**
+   ```bash
+   bun run build
+   ```
+
+2. **Test package locally**
+   ```bash
+   bun link
+   ```
+
+3. **Publish to npm**
+   ```bash
+   bun run release
+   ```
+
+## Additional Recommendations
+
+1. **Add CI/CD workflows**
+   - Setup GitHub Actions for testing and automatic publishing
+   - Configure Dependabot for dependency updates
+
+2. **Documentation**
+   - Add comprehensive README.md with usage examples
+   - Include API documentation with JSDoc comments
+
+3. **Testing**
+   ```bash
+   bun add -d bun-test
+   ```
+   ```json
+   "scripts": {
+     "test": "bun test"
+   }
+   ```
+
+4. **Git Hooks**
