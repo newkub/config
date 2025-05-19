@@ -18,3 +18,9 @@ Please help refactor my codebase with the following steps:
    - Leverage TypeScript's type system:
      - Use Vue's Composition API with proper typing
      - Create pure functions with explicit return types
+     - Apply utility types for flexible props
+     - Implement branded types for type-safe identifiers
+     - Leverage readonly modifiers for immutable reactive data
+   - Structure code for Vue and Bun optimization:
+     - Utilize Vue's reactivity system efficiently
+     - Use TypeScript discriminated unions for state management
