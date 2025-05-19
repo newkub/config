@@ -39,3 +39,44 @@ Please help refactor my codebase with the following steps:
      - Create clear domain boundaries
      - Use path aliases for improved import readability
      - Separate business logic from UI components
+     - Organize by feature rather than technical layer
+   - Optimize for Bun and Vue's module system:
+     - Use dynamic imports for code splitting
+     - Implement proper tree-shaking patterns
+     - Apply lazy loading for performance-critical components
+
+4. **Enhance quality**
+   - Apply Vue/TypeScript best practices:
+     - Implement exhaustive type checking
+     - Add proper JSDoc comments with TypeScript annotations
+     - Apply consistent naming conventions
+     - Use readonly arrays and tuples where applicable
+   - Optimize for performance:
+     - Implement async/await patterns efficiently
+     - Use Bun's native capabilities
+     - Apply proper environment variable handling
+   - Add comprehensive documentation:
+     - Document components, types and architecture
+     - Include usage examples and performance considerations
+
+5. **Improve testability**
+   - Implement Bun-optimized testing:
+     - Use Bun's built-in test runner
+     - Create typed test fixtures and factories
+     - Implement proper test isolation
+   - Apply TypeScript patterns for testable code:
+     - Use dependency injection with interfaces
+     - Create pure composables with explicit typing
+     - Implement proper error boundaries
+
+6. **Modernize codebase**
+   - Adopt latest Vue and TypeScript features:
+     - Use optional chaining and nullish coalescing
+     - Apply const assertions and type predicates
+     - Leverage Vue 3's Composition API and <script setup>
+   - Leverage Bun's modern capabilities:
+     - Use Bun's native APIs instead of Node.js equivalents
+     - Apply Bun's SQLite integration for data persistence
+     - Implement efficient WebSocket handling
+   - Apply modern UnoCSS features:
+     - Implement atomic CSS with UnoCSS utilities
