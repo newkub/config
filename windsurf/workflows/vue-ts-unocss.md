@@ -73,3 +73,10 @@ Please help refactor my codebase with the following steps:
    - Adopt latest Vue and TypeScript features:
      - Use optional chaining and nullish coalescing
      - Apply const assertions and type predicates
+     - Leverage Vue 3's Composition API and <script setup>
+   - Leverage Bun's modern capabilities:
+     - Use Bun's native APIs instead of Node.js equivalents
+     - Apply Bun's SQLite integration for data persistence
+     - Implement efficient WebSocket handling
+   - Apply modern UnoCSS features:
+     - Implement atomic CSS with UnoCSS utilities
