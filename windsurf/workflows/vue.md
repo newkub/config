@@ -521,6 +521,45 @@ This guide outlines best practices for developing Vue.js applications:
    </template>
    ```
 
+5
+   ```
+
+These best practices ensure maintainable, performant, and accessible Vue applications. Adopt them according to your project's specific needs to improve code quality and developer experience.
+   ```vue
+   <script setup>
+   import { ref, onMounted } from 'vue'
+   
+   const modalRef = ref(null)
+   const previousFocus = ref(null)
+   
+   function openModal() {
+     previousFocus.value = document.activeElement
+     // Show modal logic
+     nextTick(() => {
+       modalRef.value.focus()
+     })
+   }
+   
+   function closeModal() {
+     // Hide modal logic
+     previousFocus.value?.focus()
+   }
+   </script>
+   
+   <template>
+     <div 
+       ref="modalRef"
+       role="dialog"
+       aria-labelledby="modal-title"
+       tabindex="-1"
+     >
+       <h2 id="modal-title">Modal Title</h2>
+       <!-- Modal content -->
+       <button @click="closeModal">Close</button>
+     </div>
+   </template>
+   ```
+
 5. **Color contrast and responsive text**
    ```vue
    <template>
