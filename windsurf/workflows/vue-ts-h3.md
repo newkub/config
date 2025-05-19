@@ -327,3 +327,40 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 2. **CSS Variables for Theming**
+   ```ts
+   // uno.config.ts
+   import { defineConfig, presetUno, presetIcons } from 'unocss'
+
+   export default defineConfig({
+     presets: [
+       presetUno(),
+       presetIcons()
+     ],
+     theme: {
+       colors: {
+         primary: {
+           DEFAULT: 'var(--color-primary, #3498db)',
+           light: 'var(--color-primary-light, #5dade2)',
+           dark: 'var(--color-primary-dark, #2980b9)'
+         },
+         secondary: {
+           DEFAULT: 'var(--color-secondary, #2ecc71)',
+           light: 'var(--color-secondary-light, #58d68d)',
+           dark: 'var(--color-secondary-dark, #27ae60)'
+         }
+       },
+       fontSize: {
+         'sm': 'var(--font-size-sm, 0.875rem)',
+         'base': 'var(--font-size-base, 1rem)',
+         'lg': 'var(--font-size-lg, 1.125rem)'
+       },
+       spacing: {
+         'sm': 'var(--spacing-sm, 0.5rem)',
+         'md': 'var(--spacing-md, 1rem)',
+         'lg': 'var(--spacing-lg, 1.5rem)'
+       }
+     }
+   })
+   ```
+
+3. **Utility-first Approach with UnoCSS**
