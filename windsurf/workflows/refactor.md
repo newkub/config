@@ -155,3 +155,38 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Use structured error handling with Error causes
      - Apply proper security practices with typed validation
      - Implement efficient async patterns with Promise utilities
+     - Use proper Content-Type headers and response formats
+     - Implement proper CORS handling
+     - Apply rate limiting and request throttling
+     - Use proper HTTP status codes and error responses
+     - Implement proper authentication and authorization
+     - Implement proper test doubles (stubs, spies, mocks)
+     - Use factory functions for test data generation
+     - Create type-safe assertion utilities
+
+6. **Modernize codebase**
+   - Adopt latest TypeScript features:
+     - Upgrade to newest TypeScript version
+     - Use optional chaining and nullish coalescing
+     - Implement template literal types
+     - Apply const assertions and type predicates
+     - Use satisfies operator for type validation
+     - Implement the using keyword for resource management
+     - Apply tuple types with labels for clarity
+     - Use the as const assertion for literal type inference
+     - Leverage auto-accessors for class properties
+   - Leverage Bun's modern capabilities:
+     - Use Bun's native APIs instead of Node.js equivalents
+     - Implement Bun's optimized bundling
+     - Leverage Bun's performance APIs
+     - Use Bun for both development and production
+     - Apply Bun's SQLite integration for data persistence
+     - Implement efficient WebSocket handling with Bun
+     - Use Bun.serve for HTTP server implementation
+     - Leverage Bun's plugin system for extensibility
+     - Implement proper hot module replacement
+   - Apply modern web standards:
+     - Implement proper HTTP caching strategies
+     - Use structured error handling with Error causes
+     - Apply proper security practices with typed validation
+     - Implement efficient async patterns with Promise utilities
