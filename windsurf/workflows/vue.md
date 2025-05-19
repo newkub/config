@@ -297,6 +297,29 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 ### Implement API services
+   ```ts
+   // api/users.service.ts
+   import apiClient from './client'
+   import type { User, CreateUserData } from '@/types'
+   
+   export const usersService = {
+     async getAll(): Promise<User[]> {
+       const { data } = await apiClient.get('/users')
+       return data
+     },
+     
+     async getById(id: string): Promise<User> {
+       const { data } = await apiClient.get(`/users/${id}`)
+       return data
+     },
+     
+     async create(userData: CreateUserData): Promise<User> {
+       const { data } = await apiClient.post('/users', userData)
+       return data
+     }
+   }
+   ```
+
 3. **Handle loading and error states**
    ```vue
    <template>
