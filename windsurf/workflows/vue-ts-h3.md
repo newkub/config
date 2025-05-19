@@ -105,51 +105,18 @@ This guide outlines best practices for developing Vue.js applications:
    })
    ```
 
-2. **Leverage TypeScript**
-   - Define props with type annotations
-   - Create interfaces for component data
-   - Use type imports
-   ```ts
-   // types.ts
-   export interface User {
-     id: string
-     firstName: string
-     lastName: string
-     email: string
-   }
+2. **Component-level state with `ref` and `reactive`**
+   ```vue
+   <script setup>
+   const formState = reactive({
+     username: '',
+     password: '',
+     rememberMe: false
+   })
    
-   // Component
-   import type { User } from '@/types'
+   const errors = ref({})
+   const isSubmitting = ref(false)
+   </script>
    ```
 
-3. **Extract reusable logic to composables**
-   ```ts
-   // useUsers.ts
-   export function useUsers() {
-     const users = ref<User[]>([])
-     const isLoading = ref(true)
-     const error = ref<Error | null>(null)
-     
-     async function fetchUsers() {
-       isLoading.value = true
-       try {
-         users.value = await apiClient.getUsers()
-       } catch (err) {
-         error.value = err as Error
-       } finally {
-         isLoading.value = false
-       }
-     }
-     
-     return {
-       users,
-       isLoading,
-       error,
-       fetchUsers
-     }
-   }
-   ```
-
-## State Management
-
-1. **Use Pinia for global state**
+3. **Prefer props for parent-child communication**
