@@ -389,12 +389,6 @@ This guide outlines best practices for developing Vue.js applications:
          'lg': 'var(--font-size-lg, 1.125rem)'
        },
        spacing: {
-         'xs': 'var(--spacing-xs, 0.25rem)',
-         'sm': 'var(--spacing-sm, 0.5rem)',
-         'md': 'var(--spacing-md, 1rem)',
-         'lg': 'var(--spacing-lg, 1.5rem)',
-         'xl': 'var(--spacing-xl, 2rem)'
-       }
      }
    })
    ```
