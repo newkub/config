@@ -33,3 +33,26 @@ Please help refactor my codebase with the following steps:
      - Leverage template literal types for dynamic class generation
      - Implement builder patterns with method chaining
      - Apply appropriate design patterns (Repository, Strategy)
+
+3. **Optimize structure**
+   - Organize into module-based architecture:
+     - Create clear domain boundaries
+     - Use path aliases for improved import readability
+     - Separate business logic from UI components
+     - Organize by feature rather than technical layer
+   - Optimize for Bun and Vue's module system:
+     - Use dynamic imports for code splitting
+     - Implement proper tree-shaking patterns
+     - Apply lazy loading for performance-critical components
+
+4. **Enhance quality**
+   - Apply Vue/TypeScript best practices:
+     - Implement exhaustive type checking
+     - Add proper JSDoc comments with TypeScript annotations
+     - Apply consistent naming conventions
+     - Use readonly arrays and tuples where applicable
+   - Optimize for performance:
+     - Implement async/await patterns efficiently
+     - Use Bun's native capabilities
+     - Apply proper environment variable handling
+   - Add comprehensive documentation:
