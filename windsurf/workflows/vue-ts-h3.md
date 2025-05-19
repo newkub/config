@@ -155,3 +155,12 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 2. **Use `v-memo` for expensive renders**
+   ```vue
+   <template>
+     <div v-for="item in items" :key="item.id" v-memo="[item.id, item.updated]">
+       <!-- Complex item rendering -->
+     </div>
+   </template>
+   ```
+
+3. **Virtualize long lists**
