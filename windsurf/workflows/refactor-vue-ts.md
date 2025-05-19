@@ -26,3 +26,10 @@ Please help refactor my codebase with the following steps:
      - Create pure functions with explicit return types
      - Use TypeScript interfaces for Vue component props
      - Implement proper type narrowing with type guards
+     - Apply utility types (Pick, Omit, Partial) for flexible props
+     - Create indexed types for dynamic property access
+     - Use intersection types for combining capabilities
+     - Implement branded types for type-safe identifiers
+     - Leverage readonly modifiers for immutable reactive data
+     - Apply generic constraints to control type parameters
+   - Structure code for Vue and Bun optimization:
