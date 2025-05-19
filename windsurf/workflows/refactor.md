@@ -37,3 +37,15 @@ Please help refactor my code with the following steps:
    - Split into separate files with clear responsibilities
    - Organize related functionality into modules
    - Ensure appropriate import/export patterns
+   - Apply consistent folder structure conventions
+   - Group related components and utilities logically
+   - Consider feature-based organization for complex applications
+   - Implement proper layering (UI, business logic, data access)
+
+4. **Enhance quality**
+   - Improve naming conventions for clarity
+     - Use descriptive variables that reveal intent
+     - Follow consistent casing conventions
+     - Avoid abbreviations unless universally understood
+   - Add appropriate error handling
+     - Implement try/catch blocks where necessary
