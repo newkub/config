@@ -127,33 +127,36 @@ Please help refactor my codebase with the following steps:
      - Apply the Adapter pattern for external dependencies
      - Implement proper test doubles (stubs, spies, mocks)
      - Use factory functions for test data generation
-   - Apply Vue/TypeScript best practices:
-     - Use descriptive interface and component names
-     - Implement exhaustive type checking with never
-     - Add proper JSDoc comments with TypeScript annotations
-     - Use strict null checking and non-nullable types
-     - Apply consistent naming conventions (PascalCase for components, camelCase for variables)
-     - Implement proper error handling with custom error classes
-     - Use readonly arrays and tuples where applicable
-     - Leverage literal types for enhanced type safety
-     - Apply proper UnoCSS utility organization
-   - Optimize for Bun and Vue performance:
-     - Implement async/await patterns efficiently
-     - Use Bun's native fetch and HTTP capabilities
-     - Leverage Bun's built-in test runner for Vue components
-     - Optimize file operations with Bun's File API
-     - Use Bun.write for efficient asset handling
-     - Implement proper Vue suspense and async components
-     - Use subdirectories for complex feature modules
-   - Optimize for Bun and Vue's module system:
-     - Leverage ESM imports/exports
-     - Use dynamic imports for code splitting in Vue Router
-     - Implement proper tree-shaking patterns
-     - Structure for optimal Bun package resolution
-     - Minimize module boundary crossings
-     - Implement lazy loading for performance-critical components
-     - Use proper package.json configuration for Bun
-     - Apply consistent import ordering conventions
-     - Leverage Bun's transpilation capabilities for Vue
+     - Create type-safe assertion utilities for Vue components
 
-4. **Enhance quality**
+6. **Modernize codebase**
+   - Adopt latest Vue and TypeScript features:
+     - Upgrade to newest Vue and TypeScript versions
+     - Use optional chaining and nullish coalescing
+     - Implement template literal types
+     - Apply const assertions and type predicates
+     - Use satisfies operator for type validation
+     - Implement the using keyword for resource management
+     - Apply tuple types with labels for clarity
+     - Use the as const assertion for literal type inference
+     - Leverage Vue 3's Composition API and <script setup>
+   - Leverage Bun's modern capabilities:
+     - Use Bun's native APIs instead of Node.js equivalents
+     - Implement Bun's optimized bundling for Vue applications
+     - Leverage Bun's performance APIs
+     - Use Bun for both development and production
+     - Apply Bun's SQLite integration for data persistence
+     - Implement efficient WebSocket handling with Bun
+     - Use Bun.serve for HTTP server implementation
+     - Leverage Bun's plugin system for extensibility
+     - Implement proper hot module replacement for Vue
+   - Apply modern UnoCSS features:
+     - Implement atomic CSS with UnoCSS utilities
+     - Use UnoCSS's attributify mode for cleaner markup
+     - Apply UnoCSS's shortcuts for common patterns
+     - Leverage UnoCSS's theme customization
+     - Implement proper responsive design with UnoCSS
+     - Use UnoCSS's variant groups for complex styling
+     - Apply UnoCSS's preset configuration
+     - Implement dark mode with UnoCSS color schemes
+     - Optimize UnoCSS bundle size with proper configuration
