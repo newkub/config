@@ -368,9 +368,7 @@ This guide outlines best practices for developing Vue.js applications:
      // Other config...
      theme: {
        colors: {
-         primary: 'var(--primary-color, #3498db)',
-         secondary: 'var(--secondary-color, #2ecc71)',
-         text: 'var(--text-color, #333)'
+         // Light mode colors (default)
        },
        spacing: {
          sm: 'var(--spacing-sm, 0.5rem)',
