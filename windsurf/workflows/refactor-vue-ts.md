@@ -2,7 +2,7 @@
 description: Bun, Vue, TypeScript & UnoCSS Refactoring Guide
 ---
 
-# ผมใช้ bun, vue, typescript, unocss
+# Bun, Vue, TypeScript & UnoCSS Refactoring Workflow
 
 Please help refactor my codebase with the following steps:
 
@@ -103,7 +103,61 @@ Please help refactor my codebase with the following steps:
      - Add runtime type validation where needed
      - Create architecture diagrams for complex systems
      - Document performance considerations and trade-offs
+     - Include versioning information in API documentaLeverage Bun.password APIs for secure operations
+     - Use Bun.spawn for efficient build processes
+     - Apply proper environment variable handling
+   - Add comprehensive documentation:
+     - Document Vue components with TSDoc
+     - Include TypeScript examples in comments
+     - Document complex type manipulations
+     - Add runtime type validation where needed
+     - Create architecture diagrams for complex systems
+     - Document performance considerations and trade-offs
      - Include versioning information in API documentation
+     - Add usage examples for reusable components
+     - Document UnoCSS utility classes and patterns
+
+5. **Improve testability**
+   - Implement Bun-optimized testing:
+     - Use Bun's built-in test runner
+     - Create typed test fixtures and factories for Vue components
+     - Implement snapshot testing for Vue component rendering
+     - Leverage TypeScript for type-safe mocking
+     - Use parameterized tests for comprehensive coverage
+     - Implement proper test isolation with beforeEach/afterEach
+     - Create helper utilities for common Vue test operations
+     - Apply proper test categorization (unit, integration, e2e)
+     - Implement performance benchmarking tests
+   - Apply TypeScript patterns for testable code:
+     - Use dependency injection with interfaces
+     - Create pure composables with explicit typing
+     - Implement proper error boundaries with typed errors
+     - Use TypeScript generics for reusable test utilities
+     - Create mock implementations that satisfy interfaces
+     - Apply the Adapter pattern for external dependencies
+     - Implement proper test doubles (stubs, spies, mocks)
+     - Use factory functions for test data generation
+     - Create type-safe assertion utilities for Vue components
+
+6. **Modernize codebase**
+   - Adopt latest Vue and TypeScript features:
+     - Upgrade to newest Vue and TypeScript versions
+     - Use optional chaining and nullish coalescing
+     - Implement template literal types
+     - Apply const assertions and type predicates
+     - Use satisfies operator for type validation
+     - Implement the using keyword for resource management
+     - Apply tuple types with labels for clarity
+     - Use the as const assertion for literal type inference
+     - Leverage Vue 3's Composition API and <script setup>
+   - Leverage Bun's modern capabilities:
+     - Use Bun's native APIs instead of Node.js equivalents
+     - Implement Bun's optimized bundling for Vue applications
+     - Leverage Bun's performance APIs
+     - Use Bun for both development and production
+     - Apply Bun's SQLite integration for data persistence
+     - Implement efficient WebSocket handling with Bun
+     - Use Bun.serve for HTTP server implementation
      - Add usage examples for reusable components
      - Document UnoCSS utility classes and patterns
 
