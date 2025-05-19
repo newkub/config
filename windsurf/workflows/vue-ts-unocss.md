@@ -23,3 +23,19 @@ Please help refactor my codebase with the following steps:
      - Leverage readonly modifiers for immutable reactive data
    - Structure code for Vue and Bun optimization:
      - Utilize Vue's reactivity system efficiently
+     - Use TypeScript discriminated unions for state management
+     - Leverage Bun's performance optimizations
+     - Implement streaming patterns for large data processing
+     - Optimize JSON handling with Bun.JSON utilities
+   - Implement modern patterns:
+     - Use const assertions for immutable values
+     - Apply mapped and conditional types
+     - Leverage template literal types for dynamic class generation
+     - Implement builder patterns with method chaining
+     - Apply appropriate design patterns (Repository, Strategy)
+
+3. **Optimize structure**
+   - Organize into module-based architecture:
+     - Create clear domain boundaries
+     - Use path aliases for improved import readability
+     - Separate business logic from UI components
