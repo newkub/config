@@ -29,3 +29,30 @@ This workflow guides you through creating and publishing packages using modern J
    ```
 
 5. **Setup tsconfig.json**
+   ```json
+   {
+     "compilerOptions": {
+       "target": "ESNext",
+       "module": "NodeNext",
+       "moduleResolution": "NodeNext",
+       "esModuleInterop": true,
+       "declaration": true,
+       "outDir": "./dist",
+       "strict": true,
+       "skipLibCheck": true,
+       "forceConsistentCasingInFileNames": true,
+       "isolatedModules": true,
+       "verbatimModuleSyntax": true,
+       "noUncheckedIndexedAccess": true,
+       "noEmit": true
+     },
+     "include": ["src/**/*"],
+     "exclude": ["node_modules", "dist"]
+   }
+   ```
+
+## Code Quality Setup
+
+1. **Initialize Biome configuration**
+   ```bash
+   bunx biome init
