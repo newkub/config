@@ -351,6 +351,44 @@ This guide outlines best practices for developing Vue.js applications:
    ## Styling Best Practices
 
 1. **Style Reset for Consistent Rendering**
+   ```ts
+   // uno.config.ts
+   import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
+   
+   export default defineConfig({
+     presets: [
+       presetUno(),
+       presetAttributify(),
+       presetIcons()
+     ],
+     preflights: [
+       {
+         getCSS: () => `
+           *, ::before, ::after {
+             box-sizing: border-box;
+             border-width: 0;
+             border-style: solid;
+           }
+           body {
+             margin: 0;
+             line-height: inherit;
+             -webkit-font-smoothing: antialiased;
+           }
+           img, svg {
+             display: block;
+             vertical-align: middle;
+           }
+           button, input, select, textarea {
+             font-family: inherit;
+             font-size: 100%;
+           }
+         `
+       }
+     ]
+   })
+   ```
+
+2. **CSS Variables for Theming**
 
 ## Accessibility
 
