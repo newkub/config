@@ -262,3 +262,68 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 2. **Implement API services**
+   ```ts
+   // api/users.service.ts
+   import apiClient from './client'
+   import type { User, CreateUserData } from '@/types'
+   
+   export const usersService = {
+     async getAll(): Promise<User[]> {
+       return await apiClient('/users')
+     },
+     
+     async getById(id: string): Promise<User> {
+       return await apiClient(`/users/${id}`)
+     },
+     
+     async create(userData: CreateUserData): Promise<User> {
+       return await apiClient('/users', {
+         method: 'POST',
+         body: userData
+       })
+     }
+   }
+   ```
+
+3. **Handle loading and error states**
+   ```vue
+   <template>
+     <div>
+       <div v-if="isLoading">Loading users...</div>
+       <div v-else-if="error">Error: {{ error.message }}</div>
+       <UserList v-else :users="users" />
+     </div>
+   </template>
+   
+   <script setup>
+   import { usersService } from '@/api/users.service'
+   
+   const users = ref([])
+   const isLoading = ref(true)
+   const error = ref(null)
+   
+   onMounted(async () => {
+     try {
+       users.value = await usersService.getAll()
+     } catch (err) {
+       error.value = err
+     } finally {
+       isLoading.value = false
+     }
+   })
+   </script>
+   ```
+
+## Styling Best Practices
+
+1. **Style Reset with UnoCSS Reset**
+   ```ts
+   // main.ts
+   import '@unocss/reset/tailwind.css' // Better reset option for utility-first CSS
+   import { createApp } from 'vue'
+   import App from './App.vue'
+   
+   createApp(App).mount('#app')
+   ```
+
+2. **CSS Variables for Theming**
