@@ -2,4 +2,4 @@
 description: commit
 ---
 
-refactor ให้หนอ่ย โดยทำ ให้หนอ่
+refactor ให้หนอ่ย โดยทำลำดับตามนี้
