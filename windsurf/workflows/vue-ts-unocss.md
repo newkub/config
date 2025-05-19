@@ -24,3 +24,12 @@ Please help refactor my codebase with the following steps:
    - Structure code for Vue and Bun optimization:
      - Utilize Vue's reactivity system efficiently
      - Use TypeScript discriminated unions for state management
+     - Leverage Bun's performance optimizations
+     - Implement streaming patterns for large data processing
+     - Optimize JSON handling with Bun.JSON utilities
+   - Implement modern patterns:
+     - Use const assertions for immutable values
+     - Apply mapped and conditional types
+     - Leverage template literal types for dynamic class generation
+     - Implement builder patterns with method chaining
+     - Apply appropriate design patterns (Repository, Strategy)
