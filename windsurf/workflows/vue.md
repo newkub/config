@@ -272,7 +272,7 @@ This guide outlines best practices for developing Vue.js applications:
 
 ## API Integration
 
-### Create API client with Axios or Fetch
+1. **Create API client with Axios or Fetch**
    ```ts
    // api/client.ts
    import axios from 'axios'
@@ -296,7 +296,7 @@ This guide outlines best practices for developing Vue.js applications:
    export default apiClient
    ```
 
-### Implement API services
+2. **Implement API services**
    ```ts
    // api/users.service.ts
    import apiClient from './client'
