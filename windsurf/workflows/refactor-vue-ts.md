@@ -21,3 +21,43 @@ Please help refactor my codebase with the following steps:
    - Extract repeated UnoCSS patterns into custom utilities
 
 2. **Improve code architecture**
+   - Leverage TypeScript's type system:
+     - Use Vue's Composition API with proper typing
+     - Create pure functions with explicit return types
+     - Use TypeScript interfaces for Vue component props
+     - Implement proper type narrowing with type guards
+     - Apply utility types (Pick, Omit, Partial) for flexible props
+     - Create indexed types for dynamic property access
+     - Use intersection types for combining capabilities
+     - Implement branded types for type-safe identifiers
+     - Leverage readonly modifiers for immutable reactive data
+     - Apply generic constraints to control type parameters
+   - Structure code for Vue and Bun optimization:
+     - Utilize Vue's reactivity system efficiently
+     - Implement proper error handling with typed errors
+     - Use TypeScript discriminated unions for state management
+     - Apply dependency injection with provide/inject
+     - Leverage Bun's file system performance optimizations
+     - Implement streaming patterns for large data processing
+     - Use Bun.serve for high-performance HTTP services
+     - Optimize JSON handling with Bun.JSON utilities
+     - Implement efficient UnoCSS configurations
+   - Implement modern Vue/TypeScript patterns:
+     - Use const assertions for immutable values
+     - Apply mapped and conditional types
+     - Leverage template literal types for dynamic class generation
+     - Use namespace organization when appropriate
+     - Implement builder patterns with method chaining
+     - Create factory functions with proper return type inference
+     - Use TypeScript decorators for cross-cutting concerns
+     - Implement the Repository pattern for data access
+     - Apply the Strategy pattern for algorithm selection
+
+3. **Optimize structure**
+   - Organize into module-based architecture:
+     - Create clear domain boundaries with Vue features
+     - Implement barrel files (index.ts) for clean exports
+     - Use path aliases for improved import readability
+     - Apply consistent naming patterns for Vue components
+     - Separate business logic from UI components
+     - Organize by feature rather than technical layer
