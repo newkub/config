@@ -44,3 +44,14 @@ Please help refactor my codebase with the following steps:
      - Implement efficient UnoCSS configurations
    - Implement modern Vue/TypeScript patterns:
      - Use const assertions for immutable values
+     - Apply mapped and conditional types
+     - Leverage template literal types for dynamic class generation
+     - Use namespace organization when appropriate
+     - Implement builder patterns with method chaining
+     - Create factory functions with proper return type inference
+     - Use TypeScript decorators for cross-cutting concerns
+     - Implement the Repository pattern for data access
+     - Apply the Strategy pattern for algorithm selection
+
+3. **Optimize structure**
+   - Organize into module-based architecture:
