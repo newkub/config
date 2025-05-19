@@ -348,6 +348,7 @@ This guide outlines best practices for developing Vue.js applications:
      }
    })
    </script>
+   
 ## Styling Best Practices
 
 1. **Style Reset for Consistent Rendering**
