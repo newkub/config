@@ -272,54 +272,7 @@ This guide outlines best practices for developing Vue.js applications:
 
 ## API Integration
 
-1. **Create API client with Axios or Fetch**
-   ```ts
-   // api/client.ts
-   import axios from 'axios'
-   
-   const apiClient = axios.create({
-     baseURL: import.meta.env.VITE_API_URL,
-     timeout: 10000,
-     headers: {
-       'Content-Type': 'application/json'
-     }
-   })
-   
-   apiClient.interceptors.request.use(config => {
-     const token = localStorage.getItem('auth_token')
-     if (token) {
-       config.headers.Authorization = `Bearer ${token}`
-     }
-     return config
-   })
-   
-   export default apiClient
-   ```
-
-2. **Implement API services**
-   ```ts
-   // api/users.service.ts
-   import apiClient from './client'
-   import type { User, CreateUserData } from '@/types'
-   
-   export const usersService = {
-     async getAll(): Promise<User[]> {
-       const { data } = await apiClient.get('/users')
-       return data
-     },
-     
-     async getById(id: string): Promise<User> {
-       const { data } = await apiClient.get(`/users/${id}`)
-       return data
-     },
-     
-     async create(userData: CreateUserData): Promise<User> {
-       const { data } = await apiClient.post('/users', userData)
-       return data
-     }
-   }
-   ```
-
+### Create API client with Axios or Fetch
 3. **Handle loading and error states**
    ```vue
    <template>
