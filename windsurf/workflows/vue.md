@@ -9,6 +9,23 @@ This guide outlines best practices for developing Vue.js applications:
 ## Project Structure
 
 1. **Feature-based organization**
+   ```
+   src/
+     ├── assets/           # รูปภาพ, fonts, global CSS
+     ├── components/       # Reusable components
+     │   ├── base/         # Base/UI components
+     │   ├── features/     # Feature-specific components
+     │   │   ├── auth/
+     │   │   └── dashboard/
+     │   └── layout/       # Layout components
+     ├── composables/      # Composable functions
+     ├── pages/            # หน้าต่างๆ ของแอพ
+     ├── services/         # API calls, external services
+     ├── stores/           # Pinia stores
+     ├── types/            # TypeScript type definitions
+     ├── utils/            # Helper functions, constants
+     └── App.vue
+   ```
 
 2. **Component naming conventions**
    - Use PascalCase for component names
