@@ -18,3 +18,11 @@ Please help refactor my code with the following steps:
 
 3. **Optimize structure**
    - Split into separate files with clear responsibilities
+   - Organize related functionality into modules
+   - Ensure appropriate import/export patterns
+
+4. **Enhance quality**
+   - Improve naming conventions for clarity
+   - Add appropriate error handling
+   - Optimize performance where possible
+   - Include helpful comments/documentation
