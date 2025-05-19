@@ -439,3 +439,32 @@ This guide outlines best practices for developing Vue.js applications:
 ## Accessibility
 
 1. **Semantic HTML**
+   ```vue
+   <template>
+     <nav aria-label="Main Navigation">
+       <ul>
+         <li><router-link to="/">Home</router-link></li>
+         <li><router-link to="/about">About</router-link></li>
+       </ul>
+     </nav>
+   </template>
+   ```
+
+2. **ARIA attributes when needed**
+   ```vue
+   <template>
+     <button 
+       aria-expanded="false" 
+       aria-controls="menu-content"
+       @click="toggleMenu"
+     >
+       Menu
+     </button>
+     <div 
+       id="menu-content" 
+       :aria-hidden="!isMenuOpen"
+       :class="{ hidden: !isMenuOpen }"
+     >
+       <!-- Menu content -->
+     </div>
+   </template>
