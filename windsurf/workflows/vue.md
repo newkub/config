@@ -403,6 +403,19 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 3. **Utility-first Approach with UnoCSS**
+   ```vue
+   <template>
+     <div class="flex flex-col gap-md p-lg bg-gray-100 dark:bg-gray-800 rounded-lg">
+       <h2 class="text-xl font-bold text-primary dark:text-primary-light">User Profile</h2>
+       <div class="flex items-center gap-sm">
+         <img class="w-12 h-12 rounded-full" src="/avatar.jpg" alt="User avatar">
+         <span class="text-lg font-medium">Jane Doe</span>
+       </div>
+     </div>
+   </template>
+   ```
+
+4. **Component-specific Styling with UnoCSS Shortcuts**
 
 ## Accessibility
 
