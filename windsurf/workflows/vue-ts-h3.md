@@ -120,3 +120,38 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 3. **Prefer props for parent-child communication**
+   ```vue
+   <!-- Parent -->
+   <template>
+     <UserList 
+       :users="users" 
+       :is-loading="isLoading"
+       @user-selected="handleUserSelected" 
+     />
+   </template>
+   
+   <!-- Child -->
+   <script setup>
+   const props = defineProps(['users', 'isLoading'])
+   const emit = defineEmits(['userSelected'])
+   
+   function selectUser(user) {
+     emit('userSelected', user)
+   }
+   </script>
+   ```
+
+## Performance Optimization
+
+1. **Component lazy loading**
+   ```ts
+   // router.ts
+   const routes = [
+     {
+       path: '/dashboard',
+       component: () => import('./features/dashboard/DashboardPage.vue')
+     }
+   ]
+   ```
+
+2. **Use `v-memo` for expensive renders**
