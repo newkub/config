@@ -49,3 +49,15 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Use namespace organization when appropriate
      - Implement builder patterns with method chaining
      - Create factory functions with proper return type inference
+     - Use TypeScript decorators for cross-cutting concerns
+     - Implement the Repository pattern for data access
+     - Apply the Strategy pattern for algorithm selection
+
+3. **Optimize structure**
+   - Organize into module-based architecture:
+     - Create clear domain boundaries with namespaces/modules
+     - Implement barrel files (index.ts) for clean exports
+     - Use path aliases for improved import readability
+     - Apply consistent naming patterns for files and folders
+     - Separate business logic from technical infrastructure
+     - Organize by feature rather than technical layer
