@@ -76,3 +76,33 @@ Please help refactor my codebase with the following steps:
      - Leverage Bun's transpilation capabilities for Vue
 
 4. **Enhance quality**
+   - Apply Vue/TypeScript best practices:
+     - Use descriptive interface and component names
+     - Implement exhaustive type checking with never
+     - Add proper JSDoc comments with TypeScript annotations
+     - Use strict null checking and non-nullable types
+     - Apply consistent naming conventions (PascalCase for components, camelCase for variables)
+     - Implement proper error handling with custom error classes
+     - Use readonly arrays and tuples where applicable
+     - Leverage literal types for enhanced type safety
+     - Apply proper UnoCSS utility organization
+   - Optimize for Bun and Vue performance:
+     - Implement async/await patterns efficiently
+     - Use Bun's native fetch and HTTP capabilities
+     - Leverage Bun's built-in test runner for Vue components
+     - Optimize file operations with Bun's File API
+     - Use Bun.write for efficient asset handling
+     - Implement proper Vue suspense and async components
+     - Use subdirectories for complex feature modules
+   - Optimize for Bun and Vue's module system:
+     - Leverage ESM imports/exports
+     - Use dynamic imports for code splitting in Vue Router
+     - Implement proper tree-shaking patterns
+     - Structure for optimal Bun package resolution
+     - Minimize module boundary crossings
+     - Implement lazy loading for performance-critical components
+     - Use proper package.json configuration for Bun
+     - Apply consistent import ordering conventions
+     - Leverage Bun's transpilation capabilities for Vue
+
+4. **Enhance quality**
