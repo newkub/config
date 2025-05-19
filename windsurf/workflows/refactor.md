@@ -1,5 +1,5 @@
 ---
-description: refactor 
+description: refactor
 ---
 
 # Code Refactoring Workflow
