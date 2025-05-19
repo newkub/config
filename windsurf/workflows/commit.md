@@ -27,3 +27,11 @@ This workflow helps you create meaningful git commits using AI.
 - `--ai-max-length <length>`: Maximum length of commit message (default: 100)
 
 ## Example
+
+```bash
+# Generate commit with OpenAI (default)
+windsurf commit --ai
+
+# Use Claude with custom temperature
+windsurf commit --ai anthropic --ai-temp 0.5
+```
