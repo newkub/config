@@ -1,5 +1,5 @@
 ---
-description: commit
+description: commit workflow
 ---
 
-commit ตาม conventional commit
+# Git Commit Workflow
