@@ -369,6 +369,18 @@ This guide outlines best practices for developing Vue.js applications:
      theme: {
        colors: {
          // Light mode colors (default)
+         primary: 'var(--primary-color, #3498db)',
+         secondary: 'var(--secondary-color, #2ecc71)',
+         text: 'var(--text-color, #333)',
+         background: 'var(--background-color, #fff)',
+         
+         // Dark mode colors
+         dark: {
+           primary: 'var(--dark-primary-color, #2980b9)',
+           secondary: 'var(--dark-secondary-color, #27ae60)',
+           text: 'var(--dark-text-color, #f5f5f5)',
+           background: 'var(--dark-background-color, #121212)'
+         }
        },
        spacing: {
          sm: 'var(--spacing-sm, 0.5rem)',
