@@ -522,3 +522,14 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 5. **Color contrast and responsive text**
+   ```vue
+   <template>
+     <!-- Good color contrast (WCAG AA compliant) -->
+     <p class="text-gray-900 dark:text-gray-100 text-base md:text-lg">
+       This text maintains good contrast in both light and dark modes,
+       and scales appropriately on different screen sizes.
+     </p>
+   </template>
+   ```
+
+These best practices ensure maintainable, performant, and accessible Vue applications. Adopt them according to your project's specific needs to improve code quality and developer experience.
