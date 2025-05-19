@@ -31,3 +31,23 @@ This guide outlines best practices for developing Vue.js applications:
      isLoading.value = false
    })
    </script>
+   ```
+
+2. **Leverage TypeScript**
+   - Define props with type annotations
+   - Create interfaces for component data
+   - Use type imports
+   ```ts
+   // types.ts
+   export interface User {
+     id: string
+     firstName: string
+     lastName: string
+     email: string
+   }
+   
+   // Component
+   import type { User } from '@/types'
+   ```
+
+3. **Extract reusable logic to composables**
