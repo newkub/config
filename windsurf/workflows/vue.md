@@ -365,23 +365,16 @@ This guide outlines best practices for developing Vue.js applications:
    ```ts
    // uno.config.ts (theme section)
    export default defineConfig({
-     // Other config...
-     theme: {
-       colors: {
-         primary: 'var(--primary-color, #3498db)',
-         secondary: 'var(--secondary-color, #2ecc71)',
-         text: 'var(--text-color, #333)'
-       },
-       spacing: {
-         unit: 'var(--spacing-unit, 8px)'
-       }
-     }
+  // Other config...
+  theme: {
+    colors: {
+      primary: 'var(--primary-color, hsl(204, 70%, 53%))',      // #3498db in HSL
    })
    ```
 3. **Utility-first Approach with UnoCSS and Theme Support**
    ```vue
    <template>
-     <button class="bg-primary dark:bg-primary-dark hover:bg-primary/80 dark:hover:bg-primary-dark/80 text-white font-bold py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded transition">
+     <button class="bg-primary dark:bg-primary-dark hover:bg-primary/80 dark:hover:bg-primary-dark/80 text-white font-bold py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded transition">
        Submit
      </button>
    </template>
