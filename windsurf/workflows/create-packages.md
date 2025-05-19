@@ -194,3 +194,14 @@ This workflow guides you through creating and publishing packages using modern J
    - Add .env file support
    ```bash
    bun add -d dotenv
+   ```
+
+10. **Security Scanning**
+    - Add npm audit to CI pipeline
+    ```json
+    "scripts": {
+      "security": "bunx npm audit"
+    }
+    ```
+
+This workflow ensures your packages are well-formatted, properly tested, and smoothly released with automated versioning and changelog generation.
