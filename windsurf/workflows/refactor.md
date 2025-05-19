@@ -7,5 +7,5 @@ refactor ให้หนอ่ย โดยทำลำดับตามนี�
 2. improve performance
 4. refactor in file 
 3. impro
-4
+4.
 3. 
