@@ -131,6 +131,100 @@ This workflow guides you through creating and publishing packages using modern J
 3. **Publish to npm**
    ```bash
    bun run release
+   ```
+
+## Additional Recommendations
+
+1. **Add CI/CD workflows**
+   - Setup GitHub Actions for testing and automatic publishing
+   - Configure Dependabot for dependency updates
+
+2. **Documentation**
+   - Add comprehensive README.md with usage examples
+   - Include API documentation with JSDoc comments
+
+3. **Testing**
+   ```bash
+   bun add -d bun-test
+   ```
+   ```json
+   "scripts": {
+     "test": "bun test"
+   }
+   ```
+
+4. **Git Hooks**
+   ```bash
+   bun add -d lefthook
+   bunx lefthook install
+   ```
+
+5. **Package Exports Configuration**
+   ```json
+   "exports": {
+     ".": {
+       "import": "./dist/index.js",
+       "types": "./dist/index.d.ts"
+     },
+     "./cli": {
+       "import": "./dist/cli.js",
+       "types": "./dist/cli.d.ts"
+     }
+   }
+   ```
+
+This workflow ensures your packages are well-formatted, properly tested, and smoothly released with automated versioning and changelog generation.
+   ```json
+   "scripts": {
+     "build": "bun build ./src/index.ts ./src/cli.ts --target node --outdir ./dist --format esm"
+   }
+   ```
+
+## Release Configuration
+
+1. **Setup release-it**
+   ```bash
+   bunx release-it --init
+   ```
+
+2. **Configure in package.json**
+   ```json
+   "release-it": {
+     "git": {
+       "commitMessage": "chore: release v${version}",
+       "tagName": "v${version}"
+     },
+     "npm": {
+       "publish": true
+     },
+     "github": {
+       "release": true
+     }
+   }
+   ```
+
+3. **Add release script**
+   ```json
+   "scripts": {
+     "release": "bun run build && release-it"
+   }
+   ```
+
+## Publishing Process
+
+1. **Build package**
+   ```bash
+   bun run build
+   ```
+
+2. **Test package locally**
+   ```bash
+   bun link
+   ```
+
+3. **Publish to npm**
+   ```bash
+   bun run release
    ```json
    {
      "compilerOptions": {
