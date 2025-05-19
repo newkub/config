@@ -4,7 +4,7 @@ description: commit
 
 refactor ให้หนอ่ย โดยทำลำดับตามนี้
 1. cleanup => ดูว่ามีอะไรที่จำเป็นต้องมีและซ้ำซ้อนให้ลบออก
-2. refactor in file => refactor แก้ไขในไฟล์ให้ดี
-3. refactor แยกไฟล์ ถ้วรทำาควรทำ
+2. refactor in file 
+3. refactor แยกไฟล์ ถ้าควรทำ
 2. เขียนแบบ functional programming
 3. 
