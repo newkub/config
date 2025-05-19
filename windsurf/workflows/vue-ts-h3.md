@@ -51,3 +51,33 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 3. **Extract reusable logic to composables**
+   ```ts
+   // useUsers.ts
+   export function useUsers() {
+     const users = ref<User[]>([])
+     const isLoading = ref(true)
+     const error = ref<Error | null>(null)
+     
+     async function fetchUsers() {
+       isLoading.value = true
+       try {
+         users.value = await apiClient.getUsers()
+       } catch (err) {
+         error.value = err as Error
+       } finally {
+         isLoading.value = false
+       }
+     }
+     
+     return {
+       users,
+       isLoading,
+       error,
+       fetchUsers
+     }
+   }
+   ```
+
+## State Management
+
+1. **Use Pinia for global state**
