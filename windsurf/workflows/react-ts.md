@@ -17,3 +17,8 @@ description: แนวทางการเขียน React ที่ดีท
 
 ## Performance Optimization
 - ใช้ React.memo() สำหรับคอมโพเนนต์ที่มีการเรนเดอร์ซ้ำบ่อย
+- ใช้ useMemo และ useCallback เพื่อป้องกันการสร้างฟังก์ชันและค่าใหม่โดยไม่จำเป็น
+- แบ่ง code ด้วย dynamic imports และ React.lazy()
+
+## State Management
+- ใช้ Context API สำหรับ state ที่ใช้ร่วมกันในหลายคอมโพเนนต์
