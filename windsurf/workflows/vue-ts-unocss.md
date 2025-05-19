@@ -108,3 +108,11 @@ Please help refactor my codebase with the following steps:
      }
      ```
    - Dependencies:
+     ```json
+     "dependencies": {
+       "vue": "^3.3.x",
+       "vue-router": "^4.2.x",
+       "pinia": "^2.1.x",
+       "@vueuse/core": "^10.x"
+     }
+     ```
