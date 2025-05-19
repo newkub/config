@@ -80,3 +80,105 @@ This workflow guides you through creating and publishing packages using modern J
    ```
 
 2. **For libraries with multiple entry points**
+   ```json
+   "scripts": {
+     "build": "bun build ./src/index.ts ./src/cli.ts --target node --outdir ./dist --format esm"
+   }
+   ```
+
+## Release Configuration
+
+1. **Setup release-it**
+   ```bash
+   bunx release-it --init
+   ```
+
+2. **Configure in package.json**
+   ```json
+   "release-it": {
+     "git": {
+       "commitMessage": "chore: release v${version}",
+       "tagName": "v${version}"
+     },
+     "npm": {
+       "publish": true
+     },
+     "github": {
+       "release": true
+     }
+   }
+   ```
+
+3. **Add release script**
+   ```json
+   "scripts": {
+     "release": "bun run build && release-it"
+   }
+   ```
+
+## Publishing Process
+
+1. **Build package**
+   ```bash
+   bun run build
+   ```
+
+2. **Test package locally**
+   ```bash
+   bun link
+   ```
+
+3. **Publish to npm**
+   ```bash
+   bun run release
+   ```json
+   {
+     "compilerOptions": {
+       "target": "ESNext",
+       "module": "NodeNext",
+       "moduleResolution": "NodeNext",
+       "esModuleInterop": true,
+       "declaration": true,
+       "outDir": "./dist",
+       "strict": true,
+       "skipLibCheck": true,
+       "forceConsistentCasingInFileNames": true,
+       "isolatedModules": true,
+       "verbatimModuleSyntax": true,
+       "noUncheckedIndexedAccess": true,
+       "noEmit": true
+     },
+     "include": ["src/**/*"],
+     "exclude": ["node_modules", "dist"]
+   }
+   ```
+
+## Code Quality Setup
+
+1. **Initialize Biome configuration**
+   ```bash
+   bunx biome init
+   ```
+
+2. **Configure biome.json**
+   - Enable formatter, linter, and organize imports
+   - Configure rules according to project needs
+
+3. **Add scripts to package.json**
+   ```json
+   "scripts": {
+     "format": "biome format --write .",
+     "lint": "biome lint . && bunx tsc --noEmit"
+   }
+   ```
+
+## Build Configuration
+
+1. **Configure Bun build in package.json**
+   ```json
+   "scripts": {
+     "build": "bun build ./src/index.ts --target node --outdir ./dist --format esm"
+   }
+   ```
+
+2. **For libraries with multiple entry points**
