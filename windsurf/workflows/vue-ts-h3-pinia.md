@@ -1,31 +1,65 @@
 ---
-description: Best practices ในการเขียน Vue.js applications
+description: Best practices ในการเขียน Vue.js applications with TypeScript, H3, and Pinia
 ---
 
-# Vue.js Development Best Practices
+# Vue, TypeScript, H3, and Pinia Development Guide
 
-This guide outlines best practices for developing Vue.js applications:
+This guide outlines best practices for developing modern Vue.js applications using TypeScript, H3 for API integration, and Pinia for state management.
 
-## Component Design
+## Project Setup
 
-1. **Use composition API with `<script setup>`**
+1. **Initialize a new project with Nuxt 3**
+   ```bash
+   npx nuxi init my-vue-ts-project
+   cd my-vue-ts-project
+   npm install
+   ```
+
+2. **Install core dependencies**
+   ```bash
+   npm install pinia @pinia/nuxt h3 ofetch
+   npm install -D typescript vue-tsc @types/node
+   ```
+
+3. **Configure TypeScript**
+   ```ts
+   // tsconfig.json
+   {
+     "extends": "./.nuxt/tsconfig.json",
+     "compilerOptions": {
+       "strict": true,
+       "types": ["@pinia/nuxt"],
+       "paths": {
+         "@/*": ["./src/*"]
+       }
+     }
+   }
+   ```
+
+## Vue Component Architecture
+
+1. **Use composition API with `<script setup>` and TypeScript**
    ```vue
    <script setup lang="ts">
    import { ref, computed, onMounted } from 'vue'
    import type { User } from '@/types'
    
+   // Props with TypeScript interfaces
    const props = defineProps<{
      userId: string
    }>()
    
+   // Component state
    const user = ref<User | null>(null)
    const isLoading = ref(true)
    
+   // Computed properties
    const fullName = computed(() => {
      if (!user.value) return ''
      return `${user.value.firstName} ${user.value.lastName}`
    })
    
+   // Lifecycle hooks
    onMounted(async () => {
      user.value = await fetchUser(props.userId)
      isLoading.value = false
@@ -33,37 +67,56 @@ This guide outlines best practices for developing Vue.js applications:
    </script>
    ```
 
-2. **Leverage TypeScript**
-   - Define props with type annotations
-   - Create interfaces for component data
-   - Use type imports
+2. **Define strong types for your data models**
    ```ts
-   // types.ts
+   // types/index.ts
    export interface User {
      id: string
      firstName: string
      lastName: string
      email: string
+     role: UserRole
    }
    
-   // Component
-   import type { User } from '@/types'
+   export enum UserRole {
+     Admin = 'admin',
+     Editor = 'editor',
+     Viewer = 'viewer'
+   }
+   
+   export interface ApiResponse<T> {
+     data: T
+     meta: {
+       totalCount: number
+       page: number
+       pageSize: number
+     }
+   }
    ```
 
-3. **Extract reusable logic to composables**
+3. **Extract reusable logic with composables**
    ```ts
-   // useUsers.ts
+   // composables/useUsers.ts
+   import { ref, computed } from 'vue'
+   import type { User } from '@/types'
+   import { usersService } from '@/services/users'
+   
    export function useUsers() {
      const users = ref<User[]>([])
-     const isLoading = ref(true)
+     const isLoading = ref(false)
      const error = ref<Error | null>(null)
+     
+     const hasUsers = computed(() => users.value.length > 0)
      
      async function fetchUsers() {
        isLoading.value = true
+       error.value = null
+       
        try {
-         users.value = await apiClient.getUsers()
+         users.value = await usersService.getAll()
        } catch (err) {
          error.value = err as Error
+         console.error('Failed to fetch users:', err)
        } finally {
          isLoading.value = false
        }
@@ -73,181 +126,171 @@ This guide outlines best practices for developing Vue.js applications:
        users,
        isLoading,
        error,
+       hasUsers,
        fetchUsers
      }
    }
    ```
 
-## State Management
+## State Management with Pinia
 
-1. **Use Pinia for global state**
+1. **Create a Pinia store**
    ```ts
    // stores/auth.ts
    import { defineStore } from 'pinia'
+   import type { User } from '@/types'
+   import { authService } from '@/services/auth'
+   
+   interface AuthState {
+     user: User | null
+     token: string | null
+     isAuthenticated: boolean
+   }
    
    export const useAuthStore = defineStore('auth', {
-     state: () => ({
+     state: (): AuthState => ({
        user: null,
        token: null,
        isAuthenticated: false
      }),
-     actions: {
-       async login(credentials) {
-         // Login logic
-       },
-       logout() {
-         // Logout logic
-       }
-     },
+     
      getters: {
-       userRole: (state) => state.user?.role
+       userRole: (state) => state.user?.role,
+       isAdmin: (state) => state.user?.role === 'admin'
+     },
+     
+     actions: {
+       async login(email: string, password: string) {
+         try {
+           const { user, token } = await authService.login(email, password)
+           this.user = user
+           this.token = token
+           this.isAuthenticated = true
+           
+           // Store token in localStorage or cookie
+           localStorage.setItem('auth_token', token)
+           
+           return user
+         } catch (error) {
+           this.logout()
+           throw error
+         }
+       },
+       
+       logout() {
+         this.user = null
+         this.token = null
+         this.isAuthenticated = false
+         localStorage.removeItem('auth_token')
+       },
+       
+       async checkAuth() {
+         const token = localStorage.getItem('auth_token')
+         if (!token) return false
+         
+         try {
+           this.token = token
+           this.user = await authService.getProfile()
+           this.isAuthenticated = true
+           return true
+         } catch {
+           this.logout()
+           return false
+         }
+       }
      }
    })
    ```
 
-2. **Component-level state with `ref` and `reactive`**
+2. **Use store in components**
    ```vue
-   <script setup>
-   const formState = reactive({
-     username: '',
-     password: '',
-     rememberMe: false
+   <script setup lang="ts">
+   import { useAuthStore } from '@/stores/auth'
+   import { ref } from 'vue'
+   
+   const authStore = useAuthStore()
+   
+   const form = ref({
+     email: '',
+     password: ''
    })
    
-   const errors = ref({})
-   const isSubmitting = ref(false)
-   </script>
-   ```
-
-3. **Prefer props for parent-child communication**
-   ```vue
-   <!-- Parent -->
-   <template>
-     <UserList 
-       :users="users" 
-       :is-loading="isLoading"
-       @user-selected="handleUserSelected" 
-     />
-   </template>
+   const error = ref('')
+   const isLoading = ref(false)
    
-   <!-- Child -->
-   <script setup>
-   const props = defineProps(['users', 'isLoading'])
-   const emit = defineEmits(['userSelected'])
-   
-   function selectUser(user) {
-     emit('userSelected', user)
+   async function handleLogin() {
+     error.value = ''
+     isLoading.value = true
+     
+     try {
+       await authStore.login(form.value.email, form.value.password)
+       navigateTo('/dashboard')
+     } catch (err) {
+       error.value = (err as Error).message || 'Login failed'
+     } finally {
+       isLoading.value = false
+     }
    }
    </script>
-   ```
-
-## Performance Optimization
-
-1. **Component lazy loading**
-   ```ts
-   // router.ts
-   const routes = [
-     {
-       path: '/dashboard',
-       component: () => import('./features/dashboard/DashboardPage.vue')
-     }
-   ]
-   ```
-
-2. **Use `v-memo` for expensive renders**
-   ```vue
+   
    <template>
-     <div v-for="item in items" :key="item.id" v-memo="[item.id, item.updated]">
-       <!-- Complex item rendering -->
-     </div>
+     <form @submit.prevent="handleLogin" class="login-form">
+       <div v-if="error" class="error-message">{{ error }}</div>
+       
+       <div class="form-group">
+         <label for="email">Email</label>
+         <input 
+           id="email" 
+           v-model="form.email" 
+           type="email" 
+           required
+           class="input-field"
+         />
+       </div>
+       
+       <div class="form-group">
+         <label for="password">Password</label>
+         <input 
+           id="password" 
+           v-model="form.password" 
+           type="password" 
+           required
+           class="input-field"
+         />
+       </div>
+       
+       <button 
+         type="submit" 
+         class="btn-primary"
+         :disabled="isLoading"
+       >
+         {{ isLoading ? 'Logging in...' : 'Login' }}
+       </button>
+     </form>
    </template>
    ```
 
-3. **Virtualize long lists**
-   ```vue
-   <template>
-     <VirtualList
-       style="height: 400px"
-       :items="largeDataset"
-       :item-height="40"
-     >
-       <template #item="{ item }">
-         <ListItem :data="item" />
-       </template>
-     </VirtualList>
-   </template>
-   ```
+## API Integration with H3
 
-## Testing
-
-1. **Component testing with Vitest and Vue Test Utils**
+1. **Create API client with H3 and ofetch**
    ```ts
-   // UserCard.spec.ts
-   import { mount } from '@vue/test-utils'
-   import { describe, it, expect } from 'vitest'
-   import UserCard from './UserCard.vue'
-   
-   describe('UserCard', () => {
-     it('renders user name correctly', () => {
-       const wrapper = mount(UserCard, {
-         props: {
-           user: { id: '1', name: 'John Doe' }
-         }
-       })
-       
-       expect(wrapper.text()).toContain('John Doe')
-     })
-     
-     it('emits select event when clicked', async () => {
-       const user = { id: '1', name: 'John Doe' }
-       const wrapper = mount(UserCard, {
-         props: { user }
-       })
-       
-       await wrapper.find('.card').trigger('click')
-       expect(wrapper.emitted('select')?.[0]).toEqual([user])
-     })
-   })
-   ```
-
-2. **Use testing library for user-centric tests**
-   ```ts
-   import { render, screen, fireEvent } from '@testing-library/vue'
-   import LoginForm from './LoginForm.vue'
-   
-   test('submits form with user credentials', async () => {
-     const mockSubmit = vi.fn()
-     render(LoginForm, {
-       props: {
-         onSubmit: mockSubmit
-       }
-     })
-     
-     await fireEvent.update(screen.getByLabelText('Username'), 'user@example.com')
-     await fireEvent.update(screen.getByLabelText('Password'), 'password123')
-     await fireEvent.click(screen.getByRole('button', { name: /login/i }))
-     
-     expect(mockSubmit).toHaveBeenCalledWith({
-       username: 'user@example.com',
-       password: 'password123'
-     })
-   })
-   ```
-
-## API Integration
-
-1. **Create API client with h3**
-   ```ts
-   // api/client.ts
+   // services/api.ts
    import { $fetch } from 'ofetch'
+   import type { FetchOptions } from 'ofetch'
    
-   const apiClient = $fetch.create({
-     baseURL: import.meta.env.VITE_API_URL,
+   const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api'
+   
+   // Create a custom fetch instance
+   export const apiFetch = $fetch.create({
+     baseURL: API_BASE_URL,
      credentials: 'include',
      headers: {
-       'Content-Type': 'application/json'
+       'Content-Type': 'application/json',
+       'Accept': 'application/json'
      },
+     // Add request interceptor
      onRequest({ options }) {
+       // Add auth token from localStorage
        const token = localStorage.getItem('auth_token')
        if (token) {
          options.headers = {
@@ -255,347 +298,214 @@ This guide outlines best practices for developing Vue.js applications:
            Authorization: `Bearer ${token}`
          }
        }
+     },
+     // Add response interceptor
+     async onResponse({ response }) {
+       // Handle specific status codes
+       if (response.status === 401) {
+         // Handle unauthorized
+         localStorage.removeItem('auth_token')
+         navigateTo('/login')
+       }
+     },
+     // Add error interceptor
+     async onResponseError({ response }) {
+       // Handle API errors
+       console.error('API Error:', response.status, response._data)
      }
    })
-   
-   export default apiClient
    ```
 
-2. **Implement API services**
+2. **Create service modules for different API endpoints**
    ```ts
-   // api/users.service.ts
-   import apiClient from './client'
-   import type { User, CreateUserData } from '@/types'
+   // services/users.ts
+   import { apiFetch } from './api'
+   import type { User, ApiResponse } from '@/types'
+   
+   interface CreateUserData {
+     firstName: string
+     lastName: string
+     email: string
+     password: string
+     role?: string
+   }
    
    export const usersService = {
      async getAll(): Promise<User[]> {
-       return await apiClient('/users')
+       const response = await apiFetch<ApiResponse<User[]>>('/users')
+       return response.data
      },
      
      async getById(id: string): Promise<User> {
-       return await apiClient(`/users/${id}`)
+       return await apiFetch<User>(`/users/${id}`)
      },
      
      async create(userData: CreateUserData): Promise<User> {
-       return await apiClient('/users', {
+       return await apiFetch<User>('/users', {
          method: 'POST',
          body: userData
+       })
+     },
+     
+     async update(id: string, userData: Partial<User>): Promise<User> {
+       return await apiFetch<User>(`/users/${id}`, {
+         method: 'PATCH',
+         body: userData
+       })
+     },
+     
+     async delete(id: string): Promise<void> {
+       await apiFetch(`/users/${id}`, {
+         method: 'DELETE'
        })
      }
    }
    ```
 
-3. **Handle loading and error states**
+3. **Implement error handling and loading states**
    ```vue
-   <template>
-     <div>
-       <div v-if="isLoading">Loading users...</div>
-       <div v-else-if="error">Error: {{ error.message }}</div>
-       <UserList v-else :users="users" />
-     </div>
-   </template>
+   <script setup lang="ts">
+   import { ref, onMounted } from 'vue'
+   import type { User } from '@/types'
+   import { usersService } from '@/services/users'
    
-   <script setup>
-   import { usersService } from '@/api/users.service'
-   
-   const users = ref([])
+   const users = ref<User[]>([])
    const isLoading = ref(true)
-   const error = ref(null)
+   const error = ref<string | null>(null)
    
-   onMounted(async () => {
+   async function loadUsers() {
+     isLoading.value = true
+     error.value = null
+     
      try {
        users.value = await usersService.getAll()
      } catch (err) {
-       error.value = err
+       error.value = (err as Error).message || 'Failed to load users'
+       console.error('Error loading users:', err)
      } finally {
        isLoading.value = false
      }
+   }
+   
+   onMounted(() => {
+     loadUsers()
    })
    </script>
-   ```
-
-## Styling Best Practices
-
-1. **Style Reset with UnoCSS Reset**
-   ```ts
-   // main.ts
-   import '@unocss/reset/tailwind.css' // Better reset option for utility-first CSS
-   import { createApp } from 'vue'
-   import App from './App.vue'
    
-   createApp(App).mount('#app')
+   <template>
+     <div class="users-container">
+       <h1>Users</h1>
+       
+       <button @click="loadUsers" class="btn-outline">
+         Refresh
+       </button>
+       
+       <!-- Loading state -->
+       <div v-if="isLoading" class="loading-indicator">
+         Loading users...
+       </div>
+       
+       <!-- Error state -->
+       <div v-else-if="error" class="error-message">
+         {{ error }}
+         <button @click="loadUsers" class="btn-sm">Try again</button>
+       </div>
+       
+       <!-- Empty state -->
+       <div v-else-if="users.length === 0" class="empty-state">
+         No users found
+       </div>
+       
+       <!-- Data display -->
+       <ul v-else class="users-list">
+         <li v-for="user in users" :key="user.id" class="user-item">
+           <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+           <p>{{ user.email }}</p>
+           <span class="badge">{{ user.role }}</span>
+         </li>
+       </ul>
+     </div>
+   </template>
    ```
 
-2. **CSS Variables for Theming**
-   ```ts
-   // uno.config.ts
-   import { defineConfig, presetUno, presetIcons } from 'unocss'
+## Forms and Validation
 
-   export default defineConfig({
-     presets: [
-       presetUno(),
-       presetIcons()
-     ],
-     theme: {
-       colors: {
-         primary: {
-           DEFAULT: 'var(--color-primary, #3498db)',
-           light: 'var(--color-primary-light, #5dade2)',
-           dark: 'var(--color-primary-dark, #2980b9)'
-         },
-         secondary: {
-           DEFAULT: 'var(--color-secondary, #2ecc71)',
-           light: 'var(--color-secondary-light, #58d68d)',
-           dark: 'var(--color-secondary-dark, #27ae60)'
-         }
-       },
-       fontSize: {
-         'sm': 'var(--font-size-sm, 0.875rem)',
-         'base': 'var(--font-size-base, 1rem)',
-         'lg': 'var(--font-size-lg, 1.125rem)'
-       },
-       spacing: {
-         'sm': 'var(--spacing-sm, 0.5rem)',
-         'md': 'var(--spacing-md, 1rem)',
-         'lg': 'var(--spacing-lg, 1.5rem)'
-       }
+1. **Create a form validation composable**
+   ```ts
+   // composables/useFormValidation.ts
+   import { ref, reactive, computed } from 'vue'
+   
+   interface ValidationRule {
+     validate: (value: any) => boolean
+     message: string
+   }
+   
+   interface FieldRules {
+     [field: string]: ValidationRule[]
+   }
+   
+   export function useFormValidation<T extends Record<string, any>>(initialValues: T) {
+     const form = reactive({ ...initialValues }) as T
+     const errors = ref<Record<string, string>>({})
+     const isSubmitting = ref(false)
+     
+     const rules = reactive<FieldRules>({})
+     
+     // Add validation rules for a field
+     function addRules(field: keyof T, fieldRules: ValidationRule[]) {
+       rules[field as string] = fieldRules
      }
-   })
-   ```
-
-3. **Utility-first Approach with UnoCSS**
-   ```vue
-   <template>
-     <div class="flex flex-col gap-md p-lg bg-gray-100 dark:bg-gray-800 rounded-lg">
-       <h2 class="text-xl font-bold text-primary dark:text-primary-light">User Profile</h2>
-       <div class="flex items-center gap-sm">
-         <img class="w-12 h-12 rounded-full" src="/avatar.jpg" alt="User avatar">
-         <span class="text-lg font-medium">Jane Doe</span>
-       </div>
-     </div>
-   </template>
-   ```
-
-4. **Component-specific Styling with UnoCSS Shortcuts**
-   ```ts
-   // uno.config.ts
-   export default defineConfig({
-     // Other config...
-     shortcuts: [
-       // Button variants
-       ['btn', 'py-sm px-md rounded-md transition duration-300 font-medium focus:outline-none'],
-       ['btn-primary', 'btn bg-primary text-white hover:bg-primary-dark focus:ring-2 focus:ring-primary/50'],
-       ['btn-secondary', 'btn bg-secondary text-white hover:bg-secondary-dark focus:ring-2 focus:ring-secondary/50'],
-       ['btn-outline', 'btn border border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'],
+     
+     // Validate a single field
+     function validateField(field: keyof T) {
+       const fieldRules = rules[field as string] || []
        
-       // Form elements
-       ['input-field', 'w-full px-md py-sm border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary/50 dark:bg-gray-800 dark:text-white'],
+       for (const rule of fieldRules) {
+         if (!rule.validate(form[field])) {
+           errors.value[field as string] = rule.message
+           return false
+         }
+       }
        
-       // Card components
-       ['card', 'bg-white dark:bg-gray-800 rounded-lg shadow p-lg']
-     ]
-   })
-   ```
-
-## Accessibility
-
-1. **Semantic HTML**
-   ```vue
-   <template>
-     <nav aria-label="Main Navigation">
-       <ul>
-         <li><router-link to="/">Home</router-link></li>
-         <li><router-link to="/about">About</router-link></li>
-       </ul>
-     </nav>
-   </template>
-   ```
-
-2. **ARIA attributes when needed**
-   ```vue
-   <template>
-     <button 
-       aria-expanded="false" 
-       aria-controls="menu-content"
-       @click="toggleMenu"
-     >
-       Menu
-     </button>
-     <div 
-       id="menu-content" 
-       :aria-hidden="!isMenuOpen"
-       :class="{ hidden: !isMenuOpen }"
-     >
-       <!-- Menu content -->
-     </div>
-   </template>
-   ```
-
-3. **Keyboard navigation**
-   ```vue
-   <template>
-     <div 
-       tabindex="0" 
-       role="button"
-       @click="activate" 
-       @keyup.enter="activate"
-       @keyup.space="activate"
-     >
-       Clickable Element
-     </div>
-   </template>
-   ```
-
-4. **Focus management**
-   ```vue
-   <script setup>
-   import { ref, onMounted } from 'vue'
-   
-   const modalRef = ref(null)
-   const previousFocus = ref(null)
-   
-   function openModal() {
-     previousFocus.value = document.activeElement
-     // Show modal logic
-     nextTick(() => {
-       modalRef.value.focus()
-     })
-   }
-   
-   function closeModal() {
-     // Hide modal logic
-     previousFocus.value?.focus()
-   }
-   </script>
-   
-   <template>
-     <div 
-       ref="modalRef"
-       role="dialog"
-       aria-labelledby="modal-title"
-       tabindex="-1"
-     >
-       <h2 id="modal-title">Modal Title</h2>
-       <!-- Modal content -->
-       <button @click="closeModal">Close</button>
-     </div>
-   </template>
-   ```
-
-These best practices ensure maintainable, performant, and accessible Vue applications. Adopt them according to your project's specific needs to improve code quality and developer experience.
-   ```vue
-   <template>
-     <nav aria-label="Main Navigation">
-       <ul>
-         <li><router-link to="/">Home</router-link></li>
-         <li><router-link to="/about">About</router-link></li>
-       </ul>
-     </nav>
-   </template>
-   ```
-
-2. **ARIA attributes when needed**
-   ```vue
-   <template>
-     <button 
-       aria-expanded="false" 
-       aria-controls="menu-content"
-       @click="toggleMenu"
-     >
-       Menu
-     </button>
-     <div 
-       id="menu-content" 
-       :aria-hidden="!isMenuOpen"
-       :class="{ hidden: !isMenuOpen }"
-     >
-       <!-- Menu content -->
-     </div>
-   </template>
-   ```
-
-3. **Keyboard navigation**
-   ```vue
-   <template>
-     <div 
-       tabindex="0" 
-       role="button"
-       @click="activate" 
-       @keyup.enter="activate"
-       @keyup.space="activate"
-     >
-       Clickable Element
-     </div>
-   </template>
-   ```
-
-4. **Focus management**
-   ```vue
-   <script setup>
-   import { ref, onMounted } from 'vue'
-   
-   const modalRef = ref(null)
-   const previousFocus = ref(null)
-   
-   function openModal() {
-     previousFocus.value = document.activeElement
-     // Show modal logic
-     nextTick(() => {
-       modalRef.value.focus()
-     })
-   }
-   
-   function closeModal() {
-     // Hide modal logic
-     previousFocus.value?.focus()
-   }
-   </script>
-   
-   <template>
-     <div 
-       ref="modalRef"
-       role="dialog"
-       aria-labelledby="modal-title"
-       tabindex="-1"
-     >
-       <h2 id="modal-title">Modal Title</h2>
-       <!-- Modal content -->
-       <button @click="closeModal">Close</button>
-     </div>
-   </template>
-   ```vue
-   <template>
-     <div class="flex flex-col gap-md p-lg bg-gray-100 dark:bg-gray-800 rounded-lg">
-       <h2 class="text-xl font-bold text-primary dark:text-primary-light">User Profile</h2>
-       <div class="flex items-center gap-sm">
-         <img class="w-12 h-12 rounded-full" src="/avatar.jpg" alt="User avatar">
-         <span class="text-lg font-medium">Jane Doe</span>
-       </div>
-     </div>
-   </template>
-   ```
-
-4. **Component-specific Styling with UnoCSS Shortcuts**
-   ```ts
-   // uno.config.ts
-   export default defineConfig({
-     // Other config...
-     shortcuts: [
-       // Button variants
-       ['btn', 'py-sm px-md rounded-md transition duration-300 font-medium focus:outline-none'],
-       ['btn-primary', 'btn bg-primary text-white hover:bg-primary-dark focus:ring-2 focus:ring-primary/50'],
-       ['btn-secondary', 'btn bg-secondary text-white hover:bg-secondary-dark focus:ring-2 focus:ring-secondary/50'],
-       ['btn-outline', 'btn border border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'],
+       // Clear error if validation passes
+       delete errors.value[field as string]
+       return true
+     }
+     
+     // Validate all fields
+     function validate() {
+       let isValid = true
+       errors.value = {}
        
-       // Form elements
-       ['input-field', 'w-full px-md py-sm border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary/50 dark:bg-gray-800 dark:text-white'],
+       for (const field in rules) {
+         if (!validateField(field as keyof T)) {
+           isValid = false
+         }
+       }
        
-       // Card components
-       ['card', 'bg-white dark:bg-gray-800 rounded-lg shadow p-lg']
-     ]
-   })
+       return isValid
+     }
+     
+     // Reset form to initial values
+     function reset() {
+       Object.assign(form, initialValues)
+       errors.value = {}
+     }
+     
+     const isValid = computed(() => Object.keys(errors.value).length === 0)
+     
+     return {
+       form,
+       errors,
+       isSubmitting,
+       isValid,
+       addRules,
+       validateField,
+       validate,
+       reset
+     }
+   }
    ```
 
-## Accessibility
-
-1. **Semantic HTML**
+2. **Use the validation composable in a form component**
+   
