@@ -85,39 +85,30 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Implement proper error handling with custom error classes
      - Use readonly arrays and tuples where applicable
      - Leverage literal types for enhanced type safety
-     - Optimize JSON handling with Bun.JSON utilities
-     - Implement efficient database connections with connection pooling
-   - Implement modern TypeScript patterns:
-     - Use const assertions for immutable values
-     - Apply mapped and conditional types
-     - Leverage template literal types for string manipulation
-     - Use namespace organization when appropriate
-     - Implement builder patterns with method chaining
-     - Create factory functions with proper return type inference
-     - Use TypeScript decorators for cross-cutting concerns
-     - Implement the Repository pattern for data access
-     - Apply the Strategy pattern for algorithm selection
+     - Apply proper access modifiers (public, private, protected)
+   - Optimize for Bun's performance:
+     - Implement async/await patterns efficiently
+     - Use Bun's native fetch and HTTP capabilities
+     - Leverage Bun's built-in test runner
+     - Optimize file operations with Bun's File API
+     - Use Bun.write for efficient file writes
+     - Implement proper HTTP response streaming
+     - Leverage Bun.password APIs for secure operations
+     - Use Bun.spawn for efficient child process management
+     - Apply proper environment variable handling
+   - Add comprehensive documentation:
+     - Document public APIs with TSDoc
+     - Include TypeScript examples in comments
+     - Document complex type manipulations
+     - Add runtime type validation where needed
+     - Create architecture diagrams for complex systems
+     - Document performance considerations and trade-offs
+     - Include versioning information in API documentation
+     - Add usage examples for public interfaces
+     - Document error handling strategies
 
-3. **Optimize structure**
-   - Organize into module-based architecture:
-     - Create clear domain boundaries with namespaces/modules
-     - Implement barrel files (index.ts) for clean exports
-     - Use path aliases for improved import readability
-     - Apply consistent naming patterns for files and folders
-     - Separate business logic from technical infrastructure
-     - Organize by feature rather than technical layer
-     - Create dedicated type definition files (.d.ts) where appropriate
-     - Implement proper circular dependency resolution
-     - Use subdirectories for complex feature modules
-   - Optimize for Bun's module system:
-     - Leverage ESM imports/exports
-     - Use dynamic imports for code splitting
-     - Implement proper tree-shaking patterns
-     - Structure for optimal Bun package resolution
-     - Minimize module boundary crossings
-     - Implement lazy loading for performance-critical paths
-     - Use proper package.json configuration for Bun
-     - Apply consistent import ordering conventions
-     - Leverage Bun's transpilation capabilities
-
-4. **Enhance quality**
+5. **Improve testability**
+   - Implement Bun-optimized testing:
+     - Use Bun's built-in test runner
+     - Create typed test fixtures and factories
+     - Implement snapshot testing for complex objects
