@@ -1,56 +1,60 @@
 ---
-   ```json
-   "scripts": {
-     "format": "biome format --write .",
-     "lint": "biome lint . && bunx tsc --noEmit"
-   }
-   ```
+description: เขียน workflows การสร้าง packages ด้วย bun, biome, release it
+---
 
-## Release Configuration
+# Package Creation Workflow
 
-1. **Setup release-it**
+This workflow guides you through creating and publishing packages using modern JavaScript tools:
+
+## Setup Project
+
+1. **Initialize project with Bun**
    ```bash
-   bunx release-it --init
+   bun init
    ```
 
-2. **Configure in package.json**
+2. **Configure package.json**
+   - Set `"type": "module"` for ESM support
+   - Add appropriate `"files"`, `"main"`, and `"exports"` fields
+   - Configure scripts for building, testing, and publishing
+
+3. **Add development dependencies**
+   ```bash
+   bun add -d @biomejs/biome typescript release-it
+   ```
+
+4. **Configure TypeScript**
+   ```bash
+   bunx tsc --init
+   ```
+
+5. **Setup tsconfig.json**
    ```json
-   "release-it": {
-     "git": {
-       "commitMessage": "chore: release v${version}",
-       "tagName": "v${version}"
+   {
+     "compilerOptions": {
+       "target": "ES2022",
+       "module": "NodeNext",
+       "moduleResolution": "NodeNext",
+       "esModuleInterop": true,
+       "declaration": true,
+       "outDir": "./dist",
+       "strict": true,
+       "skipLibCheck": true
      },
-     "npm": {
-       "publish": true
-     },
-     "github": {
-       "release": true
-     }
+     "include": ["src/**/*"],
+     "exclude": ["node_modules", "dist"]
    }
    ```
 
-3. **Add release script**
-   ```json
-   "scripts": {
-     "release": "bun run build && release-it"
-   }
-   ```
+## Code Quality Setup
 
-## Publishing Process
-
-1. **Build package**
+1. **Initialize Biome configuration**
    ```bash
-   bun run build
+   bunx biome init
    ```
 
-2. **Test package locally**
-   ```bash
-   bun link
-   ```
+2. **Configure biome.json**
+   - Enable formatter, linter, and organize imports
+   - Configure rules according to project needs
 
-3. **Publish to npm**
-   ```bash
-   bun run release
-   ```
-
-This workflow ensures your packages are well-formatted, properly tested, and smoothly released with automated versioning and changelog generation.
+3. **Add scripts to package.json**
