@@ -112,3 +112,16 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Use Bun's built-in test runner
      - Create typed test fixtures and factories
      - Implement snapshot testing for complex objects
+     - Leverage TypeScript for type-safe mocking
+     - Use parameterized tests for comprehensive coverage
+     - Implement proper test isolation with beforeEach/afterEach
+     - Create helper utilities for common test operations
+     - Apply proper test categorization (unit, integration, e2e)
+     - Implement performance benchmarking tests
+   - Apply TypeScript patterns for testable code:
+     - Use dependency injection with interfaces
+     - Create pure functions with explicit typing
+     - Implement proper error boundaries with typed errors
+     - Use TypeScript generics for reusable test utilities
+     - Create mock implementations that satisfy interfaces
+     - Apply the Adapter pattern for external dependencies
