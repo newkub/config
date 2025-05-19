@@ -351,6 +351,16 @@ This guide outlines best practices for developing Vue.js applications:
    ## Styling Best Practices
 
 1. **Style Reset with UnoCSS Reset**
+   ```ts
+   // main.ts
+   import '@unocss/reset/tailwind.css' // Better reset option for utility-first CSS
+   import { createApp } from 'vue'
+   import App from './App.vue'
+   
+   createApp(App).mount('#app')
+   ```
+
+2. **CSS Variables for Theming**
 
 ## Accessibility
 
