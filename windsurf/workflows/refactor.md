@@ -49,3 +49,32 @@ Please help refactor my code with the following steps:
      - Avoid abbreviations unless universally understood
    - Add appropriate error handling
      - Implement try/catch blocks where necessary
+     - Create custom error types for domain-specific errors
+     - Provide meaningful error messages
+     - Handle edge cases explicitly
+   - Optimize performance where possible
+     - Identify and fix bottlenecks
+     - Minimize redundant calculations
+     - Implement caching strategies where appropriate
+     - Consider time and space complexity
+   - Include helpful comments/documentation
+     - Document public API interfaces thoroughly
+     - Explain complex algorithms or business rules
+     - Add JSDoc/TSDoc comments for functions and classes
+     - Document why, not what (code should be self-explanatory)
+
+5. **Improve testability**
+   - Ensure functions are pure and deterministic where possible
+   - Add unit tests for critical functionality
+   - Implement mocking strategies for external dependencies
+   - Separate side effects from pure business logic
+   - Design for testability (dependency injection, interface-based design)
+   - Add integration tests for component interactions
+   - Implement end-to-end tests for critical user journeys
+   - Use test-driven development for new features
+   
+6. **Modernize codebase**
+   - Update to latest language features and best practices
+   - Replace deprecated methods and libraries
+   - Implement async/await patterns where applicable
+   - Use modern ES/TS features (optional chaining, nullish coalescing)
