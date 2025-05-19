@@ -90,3 +90,19 @@ Please help refactor my code with the following steps:
    - Design for testability (dependency injection, interface-based design)
    - Add integration tests for component interactions
    - Implement end-to-end tests for critical user journeys
+   - Use test-driven development for new features
+   - Write tests that focus on behavior, not implementation
+   - Implement snapshot testing for UI components
+   - Use property-based testing for complex algorithms
+   - Create test fixtures and factories for consistent test data
+   - Measure and maintain test coverage metrics
+   - Implement contract tests for service boundaries
+   
+6. **Modernize codebase**
+   - Update to latest language features and best practices
+   - Replace deprecated methods and libraries
+   - Implement async/await patterns where applicable
+   - Use modern ES/TS features (optional chaining, nullish coalescing)
+   - Adopt current framework patterns and idioms
+   - Implement proper type safety and null checking
+   - Consider using immutable data structures
