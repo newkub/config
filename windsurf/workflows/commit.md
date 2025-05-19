@@ -2,7 +2,6 @@
 description: commit
 ---
 
-commit ตาม conventional commit
 
 
 This workflow helps you create well-structured commits following conventional commit standards.
