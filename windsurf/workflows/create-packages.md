@@ -63,3 +63,34 @@ This workflow guides you through creating and publishing packages using modern J
    - Configure rules according to project needs
 
 3. **Add scripts to package.json**
+   ```json
+   "scripts": {
+     "format": "biome format --write .",
+     "lint": "biome lint . && bunx tsc --noEmit"
+   }
+   ```
+
+## Build Configuration
+
+1. **Configure Bun build in package.json**
+   ```json
+   "scripts": {
+     "build": "bun build ./src/index.ts --target node --outdir ./dist --format esm"
+   }
+   ```
+
+2. **For libraries with multiple entry points**
+   ```json
+   "scripts": {
+     "build": "bun build ./src/index.ts ./src/cli.ts --target node --outdir ./dist --format esm"
+   }
+   ```
+
+## Release Configuration
+
+1. **Setup release-it**
+   ```bash
+   bunx release-it --init
+   ```
+
+2. **Configure in package.json**
