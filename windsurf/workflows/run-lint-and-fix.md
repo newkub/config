@@ -14,3 +14,15 @@ To identify code issues and style violations, run:
 npm run lint
 # or
 bun run lint
+```
+
+This executes Biome's linting rules against your codebase as configured in `biome.json`.
+
+## Automatically Fixing Issues
+
+To automatically fix linting issues:
+
+```bash
+npm run lint:fix
+# or
+bun run lint:fix
