@@ -181,3 +181,33 @@ This guide outlines best practices for developing Vue.js applications:
 ## Testing
 
 1. **Component testing with Vitest and Vue Test Utils**
+   ```ts
+   // UserCard.spec.ts
+   import { mount } from '@vue/test-utils'
+   import { describe, it, expect } from 'vitest'
+   import UserCard from './UserCard.vue'
+   
+   describe('UserCard', () => {
+     it('renders user name correctly', () => {
+       const wrapper = mount(UserCard, {
+         props: {
+           user: { id: '1', name: 'John Doe' }
+         }
+       })
+       
+       expect(wrapper.text()).toContain('John Doe')
+     })
+     
+     it('emits select event when clicked', async () => {
+       const user = { id: '1', name: 'John Doe' }
+       const wrapper = mount(UserCard, {
+         props: { user }
+       })
+       
+       await wrapper.find('.card').trigger('click')
+       expect(wrapper.emitted('select')?.[0]).toEqual([user])
+     })
+   })
+   ```
+
+2. **Use testing library for user-centric tests**
