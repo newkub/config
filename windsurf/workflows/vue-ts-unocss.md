@@ -133,3 +133,22 @@ Please help refactor my codebase with the following steps:
    - Adopt latest Vue and TypeScript features:
      - Upgrade to newest Vue and TypeScript versions
      - Use optional chaining and nullish coalescing
+     - Implement template literal types
+     - Apply const assertions and type predicates
+     - Use satisfies operator for type validation
+     - Implement the using keyword for resource management
+     - Apply tuple types with labels for clarity
+     - Use the as const assertion for literal type inference
+     - Leverage Vue 3's Composition API and <script setup>
+   - Leverage Bun's modern capabilities:
+     - Use Bun's native APIs instead of Node.js equivalents
+     - Implement Bun's optimized bundling for Vue applications
+     - Leverage Bun's performance APIs
+     - Use Bun for both development and production
+     - Apply Bun's SQLite integration for data persistence
+     - Implement efficient WebSocket handling with Bun
+     - Use Bun.serve for HTTP server implementation
+     - Leverage Bun's plugin system for extensibility
+     - Implement proper hot module replacement for Vue
+   - Apply modern UnoCSS features:
+     - Implement atomic CSS with UnoCSS utilities
