@@ -379,6 +379,13 @@ This guide outlines best practices for developing Vue.js applications:
    })
    ```
 3. **Utility-first Approach with UnoCSS and Theme Support**
+   ```vue
+   <template>
+     <button class="bg-primary dark:bg-primary-dark hover:bg-primary/80 dark:hover:bg-primary-dark/80 text-white font-bold py-2 px-4 rounded transition">
+       Submit
+     </button>
+   </template>
+   ```
 
 4. **Component-specific Styling with UnoCSS Shortcuts**
    ```ts
