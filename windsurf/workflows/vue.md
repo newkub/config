@@ -350,6 +350,33 @@ This guide outlines best practices for developing Vue.js applications:
    </script>
    ```
 ## Styling Best Practices
+
+1. **Global CSS for component styling**
+   ```vue
+   <style>
+   .button {
+     /* Styles apply globally */
+   }
+   </style>
+   ```
+
+2. **CSS variables for theming**
+   ```css
+   :root {
+     --primary-color: #3498db;
+     --secondary-color: #2ecc71;
+     --text-color: #333;
+     --spacing-unit: 8px;
+   }
+   
+   .button {
+     background-color: var(--primary-color);
+     color: white;
+     padding: calc(var(--spacing-unit) * 2);
+   }
+   ```
+
+3. **Utility-first approach with UnoCSS**
    ```
 
 ## Accessibility
