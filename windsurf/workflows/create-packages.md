@@ -35,3 +35,38 @@ This workflow guides you through creating and publishing packages using modern J
    - Configure rules according to project needs
 
 3. **Add scripts to package.json**
+   ```json
+   "scripts": {
+     "format": "biome format --write .",
+     "lint": "biome lint . && bunx tsc --noEmit"
+   }
+   ```
+
+## Release Configuration
+
+1. **Setup release-it**
+   ```bash
+   bunx release-it --init
+   ```
+
+2. **Configure in package.json**
+   ```json
+   "release-it": {
+     "git": {
+       "commitMessage": "chore: release v${version}",
+       "tagName": "v${version}"
+     },
+     "npm": {
+       "publish": true
+     },
+     "github": {
+       "release": true
+     }
+   }
+   ```
+
+3. **Add release script**
+   ```json
+   "scripts": {
+     "release": "bun run build && release-it"
+   }
