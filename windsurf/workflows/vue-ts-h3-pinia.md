@@ -12,13 +12,13 @@ This guide outlines best practices for developing modern Vue.js applications usi
    ```bash
    npx nuxi init my-vue-ts-project
    cd my-vue-ts-project
-   npm install
+   bun install
    ```
 
 2. **Install core dependencies**
    ```bash
-   npm install pinia @pinia/nuxt h3 ofetch
-   npm install -D typescript vue-tsc @types/node
+   bun install pinia @pinia/nuxt h3 ofetch
+   bun install -D typescript vue-tsc @types/node
    ```
 
 3. **Configure TypeScript**
