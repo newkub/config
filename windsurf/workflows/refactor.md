@@ -61,3 +61,18 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Apply consistent naming patterns for files and folders
      - Separate business logic from technical infrastructure
      - Organize by feature rather than technical layer
+     - Create dedicated type definition files (.d.ts) where appropriate
+     - Implement proper circular dependency resolution
+     - Use subdirectories for complex feature modules
+   - Optimize for Bun's module system:
+     - Leverage ESM imports/exports
+     - Use dynamic imports for code splitting
+     - Implement proper tree-shaking patterns
+     - Structure for optimal Bun package resolution
+     - Minimize module boundary crossings
+     - Implement lazy loading for performance-critical paths
+     - Use proper package.json configuration for Bun
+     - Apply consistent import ordering conventions
+     - Leverage Bun's transpilation capabilities
+
+4. **Enhance quality**
