@@ -400,3 +400,119 @@ This guide outlines best practices for developing Vue.js applications:
 ## Accessibility
 
 1. **Semantic HTML**
+   ```vue
+   <template>
+     <nav aria-label="Main Navigation">
+       <ul>
+         <li><router-link to="/">Home</router-link></li>
+         <li><router-link to="/about">About</router-link></li>
+       </ul>
+     </nav>
+   </template>
+   ```
+
+2. **ARIA attributes when needed**
+   ```vue
+   <template>
+     <button 
+       aria-expanded="false" 
+       aria-controls="menu-content"
+       @click="toggleMenu"
+     >
+       Menu
+     </button>
+     <div 
+       id="menu-content" 
+       :aria-hidden="!isMenuOpen"
+       :class="{ hidden: !isMenuOpen }"
+     >
+       <!-- Menu content -->
+     </div>
+   </template>
+   ```
+
+3. **Keyboard navigation**
+   ```vue
+   <template>
+     <div 
+       tabindex="0" 
+       role="button"
+       @click="activate" 
+       @keyup.enter="activate"
+       @keyup.space="activate"
+     >
+       Clickable Element
+     </div>
+   </template>
+   ```
+
+4. **Focus management**
+   ```vue
+   <script setup>
+   import { ref, onMounted } from 'vue'
+   
+   const modalRef = ref(null)
+   const previousFocus = ref(null)
+   
+   function openModal() {
+     previousFocus.value = document.activeElement
+     // Show modal logic
+     nextTick(() => {
+       modalRef.value.focus()
+     })
+   }
+   
+   function closeModal() {
+     // Hide modal logic
+     previousFocus.value?.focus()
+   }
+   </script>
+   
+   <template>
+     <div 
+       ref="modalRef"
+       role="dialog"
+       aria-labelledby="modal-title"
+       tabindex="-1"
+     >
+       <h2 id="modal-title">Modal Title</h2>
+       <!-- Modal content -->
+       <button @click="closeModal">Close</button>
+     </div>
+   </template>
+   ```vue
+   <template>
+     <div class="flex flex-col gap-md p-lg bg-gray-100 dark:bg-gray-800 rounded-lg">
+       <h2 class="text-xl font-bold text-primary dark:text-primary-light">User Profile</h2>
+       <div class="flex items-center gap-sm">
+         <img class="w-12 h-12 rounded-full" src="/avatar.jpg" alt="User avatar">
+         <span class="text-lg font-medium">Jane Doe</span>
+       </div>
+     </div>
+   </template>
+   ```
+
+4. **Component-specific Styling with UnoCSS Shortcuts**
+   ```ts
+   // uno.config.ts
+   export default defineConfig({
+     // Other config...
+     shortcuts: [
+       // Button variants
+       ['btn', 'py-sm px-md rounded-md transition duration-300 font-medium focus:outline-none'],
+       ['btn-primary', 'btn bg-primary text-white hover:bg-primary-dark focus:ring-2 focus:ring-primary/50'],
+       ['btn-secondary', 'btn bg-secondary text-white hover:bg-secondary-dark focus:ring-2 focus:ring-secondary/50'],
+       ['btn-outline', 'btn border border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'],
+       
+       // Form elements
+       ['input-field', 'w-full px-md py-sm border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary/50 dark:bg-gray-800 dark:text-white'],
+       
+       // Card components
+       ['card', 'bg-white dark:bg-gray-800 rounded-lg shadow p-lg']
+     ]
+   })
+   ```
+
+## Accessibility
+
+1. **Semantic HTML**
