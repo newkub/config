@@ -3,7 +3,7 @@ description: commit
 ---
 
 refactor ให้หนอ่ย โดยทำลำดับตามนี้
-1. cleanup variables dupi
+1. cleanup variables duplicate l
 2. refactor in file 
 3. refactor แยกไฟล์ ถ้าควรทำ
 2. เขียนแบบ functional programming
