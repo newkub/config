@@ -1,8 +1,9 @@
 ---
-description: commit workflow
+description: commit
 ---
 
-# Git Commit Workflow
+commit ตาม conventional commit
+
 
 This workflow helps you create well-structured commits following conventional commit standards.
 
