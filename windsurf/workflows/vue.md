@@ -367,8 +367,13 @@ This guide outlines best practices for developing Vue.js applications:
    export default defineConfig({
   // Other config...
   theme: {
-    colors: {
-      primary: 'var(--primary-color, hsl(204, 70%, 53%))',      // #3498db in HSL
+ colors: {
+      primary: 'var(--primary-color, hsl(204, 70%, 53%))', hsl(204, 70%, 53%))',      // #3498db in HSL
+      secondary: 'var(--secondary-color, hsl(145, 63%, 49%))',  // #2ecc71 in HSL
+      text: 'var(--text-color, hsl(0, 0%, 20%))'    }
+     // #333 in HSL
+    },
+     // #3498db in HSL
    })
    ```
 3. **Utility-first Approach with UnoCSS and Theme Support**
