@@ -63,3 +63,13 @@ Please help refactor my codebase with the following steps:
      - Organize by feature rather than technical layer
      - Create dedicated type definition files (.d.ts) for Vue plugins
      - Implement proper circular dependency resolution
+     - Use subdirectories for complex feature modules
+   - Optimize for Bun and Vue's module system:
+     - Leverage ESM imports/exports
+     - Use dynamic imports for code splitting in Vue Router
+     - Implement proper tree-shaking patterns
+     - Structure for optimal Bun package resolution
+     - Minimize module boundary crossings
+     - Implement lazy loading for performance-critical components
+     - Use proper package.json configuration for Bun
+     - Apply consistent import ordering conventions
