@@ -3,7 +3,6 @@ description: commit
 ---
 
 
-
 Please help refactor my code with the following steps:
 
 1. Eliminate duplicate variables
