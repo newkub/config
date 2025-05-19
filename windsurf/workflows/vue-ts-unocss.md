@@ -80,3 +80,6 @@ Please help refactor my codebase with the following steps:
      - Implement efficient WebSocket handling
    - Apply modern UnoCSS features:
      - Implement atomic CSS with UnoCSS utilities
+
+7. **Setup in package.json**
+   - Essential scripts:
