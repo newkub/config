@@ -29,3 +29,14 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Apply utility types (Pick, Omit, Partial) for flexibility
      - Create indexed types for dynamic property access
      - Use intersection types for combining capabilities
+     - Implement branded types for type-safe identifiers
+     - Leverage readonly modifiers for immutable data
+     - Apply generic constraints to control type parameters
+   - Structure code for Bun's runtime optimization:
+     - Utilize Bun's native APIs where applicable
+     - Implement proper error handling with typed errors
+     - Use TypeScript discriminated unions for state management
+     - Apply dependency injection with interface-based design
+     - Leverage Bun's file system performance optimizations
+     - Implement streaming patterns for large data processing
+     - Use Bun.serve for high-performance HTTP services
