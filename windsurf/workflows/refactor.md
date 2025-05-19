@@ -76,3 +76,48 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Leverage Bun's transpilation capabilities
 
 4. **Enhance quality**
+   - Apply TypeScript best practices:
+     - Use descriptive interface and type names
+     - Implement exhaustive type checking with never
+     - Add proper JSDoc comments with TypeScript annotations
+     - Use strict null checking and non-nullable types
+     - Apply consistent naming conventions (PascalCase for types, camelCase for variables)
+     - Implement proper error handling with custom error classes
+     - Use readonly arrays and tuples where applicable
+     - Leverage literal types for enhanced type safety
+     - Optimize JSON handling with Bun.JSON utilities
+     - Implement efficient database connections with connection pooling
+   - Implement modern TypeScript patterns:
+     - Use const assertions for immutable values
+     - Apply mapped and conditional types
+     - Leverage template literal types for string manipulation
+     - Use namespace organization when appropriate
+     - Implement builder patterns with method chaining
+     - Create factory functions with proper return type inference
+     - Use TypeScript decorators for cross-cutting concerns
+     - Implement the Repository pattern for data access
+     - Apply the Strategy pattern for algorithm selection
+
+3. **Optimize structure**
+   - Organize into module-based architecture:
+     - Create clear domain boundaries with namespaces/modules
+     - Implement barrel files (index.ts) for clean exports
+     - Use path aliases for improved import readability
+     - Apply consistent naming patterns for files and folders
+     - Separate business logic from technical infrastructure
+     - Organize by feature rather than technical layer
+     - Create dedicated type definition files (.d.ts) where appropriate
+     - Implement proper circular dependency resolution
+     - Use subdirectories for complex feature modules
+   - Optimize for Bun's module system:
+     - Leverage ESM imports/exports
+     - Use dynamic imports for code splitting
+     - Implement proper tree-shaking patterns
+     - Structure for optimal Bun package resolution
+     - Minimize module boundary crossings
+     - Implement lazy loading for performance-critical paths
+     - Use proper package.json configuration for Bun
+     - Apply consistent import ordering conventions
+     - Leverage Bun's transpilation capabilities
+
+4. **Enhance quality**
