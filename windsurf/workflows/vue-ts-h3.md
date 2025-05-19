@@ -164,3 +164,20 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 3. **Virtualize long lists**
+   ```vue
+   <template>
+     <VirtualList
+       style="height: 400px"
+       :items="largeDataset"
+       :item-height="40"
+     >
+       <template #item="{ item }">
+         <ListItem :data="item" />
+       </template>
+     </VirtualList>
+   </template>
+   ```
+
+## Testing
+
+1. **Component testing with Vitest and Vue Test Utils**
