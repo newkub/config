@@ -377,6 +377,15 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 3. **Utility-first approach with UnoCSS**
+   ```vue
+   <template>
+     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+       Submit
+     </button>
+   </template>
+   ```
+
+4. **UnoCSS configuration**
    ```
 
 ## Accessibility
