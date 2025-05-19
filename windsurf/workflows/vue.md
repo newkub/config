@@ -362,6 +362,33 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 2. **CSS Variables for Theming**
+   ```ts
+   // uno.config.ts (theme section)
+   export default defineConfig({
+     // Other config...
+     theme: {
+       colors: {
+         primary: 'var(--primary-color, #3498db)',
+         secondary: 'var(--secondary-color, #2ecc71)',
+         text: 'var(--text-color, #333)'
+       },
+       spacing: {
+         sm: 'var(--spacing-sm, 0.5rem)',
+         md: 'var(--spacing-md, 1rem)',
+         lg: 'var(--spacing-lg, 2rem)'
+       },
+       fontFamily: {
+         sans: 'var(--font-sans, "Inter", sans-serif)',
+         heading: 'var(--font-heading, "Montserrat", sans-serif)'
+       },
+       borderRadius: {
+         default: 'var(--radius-default, 0.25rem)',
+         lg: 'var(--radius-lg, 0.5rem)',
+         full: 'var(--radius-full, 9999px)'
+       }
+     }
+   });
+   ```
 
 4. **Component-specific Styling with UnoCSS Shortcuts**
    ```ts
