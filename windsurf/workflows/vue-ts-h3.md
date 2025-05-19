@@ -364,3 +364,39 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 3. **Utility-first Approach with UnoCSS**
+   ```vue
+   <template>
+     <div class="flex flex-col gap-md p-lg bg-gray-100 dark:bg-gray-800 rounded-lg">
+       <h2 class="text-xl font-bold text-primary dark:text-primary-light">User Profile</h2>
+       <div class="flex items-center gap-sm">
+         <img class="w-12 h-12 rounded-full" src="/avatar.jpg" alt="User avatar">
+         <span class="text-lg font-medium">Jane Doe</span>
+       </div>
+     </div>
+   </template>
+   ```
+
+4. **Component-specific Styling with UnoCSS Shortcuts**
+   ```ts
+   // uno.config.ts
+   export default defineConfig({
+     // Other config...
+     shortcuts: [
+       // Button variants
+       ['btn', 'py-sm px-md rounded-md transition duration-300 font-medium focus:outline-none'],
+       ['btn-primary', 'btn bg-primary text-white hover:bg-primary-dark focus:ring-2 focus:ring-primary/50'],
+       ['btn-secondary', 'btn bg-secondary text-white hover:bg-secondary-dark focus:ring-2 focus:ring-secondary/50'],
+       ['btn-outline', 'btn border border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'],
+       
+       // Form elements
+       ['input-field', 'w-full px-md py-sm border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary/50 dark:bg-gray-800 dark:text-white'],
+       
+       // Card components
+       ['card', 'bg-white dark:bg-gray-800 rounded-lg shadow p-lg']
+     ]
+   })
+   ```
+
+## Accessibility
+
+1. **Semantic HTML**
