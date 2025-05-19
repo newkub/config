@@ -274,24 +274,49 @@ This guide outlines best practices for developing Vue.js applications:
 
 1. **Create API client with h3**
    ```ts
+   // api/client.ts
+   import { $fetch } from 'ofetch'
+   
+   const apiClient = $fetch.create({
+     baseURL: import.meta.env.VITE_API_URL,
+     credentials: 'include',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     onRequest({ options }) {
+       const token = localStorage.getItem('auth_token')
+       if (token) {
+         options.headers = {
+           ...options.headers,
+           Authorization: `Bearer ${token}`
+         }
+       }
+     }
+   })
+   
+   export default apiClient
+   ```
+
+2. **Implement API services**
+   ```ts
    // api/users.service.ts
    import apiClient from './client'
    import type { User, CreateUserData } from '@/types'
    
    export const usersService = {
      async getAll(): Promise<User[]> {
-       const { data } = await apiClient.get('/users')
-       return data
+       return await apiClient('/users')
      },
      
      async getById(id: string): Promise<User> {
-       const { data } = await apiClient.get(`/users/${id}`)
-       return data
+       return await apiClient(`/users/${id}`)
      },
      
      async create(userData: CreateUserData): Promise<User> {
-       const { data } = await apiClient.post('/users', userData)
-       return data
+       return await apiClient('/users', {
+         method: 'POST',
+         body: userData
+       })
      }
    }
    ```
