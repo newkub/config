@@ -125,3 +125,17 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Use TypeScript generics for reusable test utilities
      - Create mock implementations that satisfy interfaces
      - Apply the Adapter pattern for external dependencies
+     - Implement proper test doubles (stubs, spies, mocks)
+     - Use factory functions for test data generation
+     - Create type-safe assertion utilities
+
+6. **Modernize codebase**
+   - Adopt latest TypeScript features:
+     - Upgrade to newest TypeScript version
+     - Use optional chaining and nullish coalescing
+     - Implement template literal types
+     - Apply const assertions and type predicates
+     - Use satisfies operator for type validation
+     - Implement the using keyword for resource management
+     - Apply tuple types with labels for clarity
+     - Use the as const assertion for literal type inference
