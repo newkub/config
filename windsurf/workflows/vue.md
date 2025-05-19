@@ -389,7 +389,7 @@ This guide outlines best practices for developing Vue.js applications:
    ```ts
    // unocss.config.ts
    import { defineConfig, presetWind4, presetIcon } from 'unocss'
-   import { presetWind4 } from 'unocss'
+   import { presetWind44, presetIcons } from 'unocss'
    import { presetIcons } from 'unocss'
 
    export default defineConfig({
