@@ -12,3 +12,8 @@ description: แนวทางการเขียน React ที่ดีท
 ## TypeScript Best Practices
 - กำหนด type ให้ชัดเจนสำหรับ props และ state
 - หลีกเลี่ยงการใช้ `any` type
+- ใช้ interface สำหรับ objects ที่มีโครงสร้างชัดเจน
+- ใช้ type aliases สำหรับ union types และ complex types
+
+## Performance Optimization
+- ใช้ React.memo() สำหรับคอมโพเนนต์ที่มีการเรนเดอร์ซ้ำบ่อย
