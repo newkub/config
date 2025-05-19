@@ -45,3 +45,5 @@ Please help refactor my code with the following steps:
    
 6. **Modernize codebase**
    - Update to latest language features and best practices
+   - Replace deprecated methods and libraries
+   - Implement async/await patterns where applicable
