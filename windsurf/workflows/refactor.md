@@ -27,3 +27,20 @@ Please help refactor my code with the following steps:
        - Complex state management is required
        - Encapsulation of data and behavior is important
        - Class hierarchies provide clear modeling benefits
+       - Domain objects have clear identity and lifecycle
+       - Polymorphism would simplify conditional logic
+   - Extract reusable functions and components
+   - Apply proper separation of concerns
+   - Use types and interfaces instead of inline definitions
+   - Implement appropriate design patterns (Factory, Strategy, Observer, etc.)
+   - Reduce coupling between modules through dependency injection
+   - Consider using composition over inheritance
+   - Apply the SOLID principles where applicable
+
+3. **Optimize structure**
+   - Split into separate files with clear responsibilities
+   - Organize related functionality into modules
+   - Ensure appropriate import/export patterns
+   - Apply consistent folder structure conventions
+   - Group related components and utilities logically
+   - Consider feature-based organization for complex applications
