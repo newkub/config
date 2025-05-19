@@ -211,3 +211,29 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 2. **Use testing library for user-centric tests**
+   ```ts
+   import { render, screen, fireEvent } from '@testing-library/vue'
+   import LoginForm from './LoginForm.vue'
+   
+   test('submits form with user credentials', async () => {
+     const mockSubmit = vi.fn()
+     render(LoginForm, {
+       props: {
+         onSubmit: mockSubmit
+       }
+     })
+     
+     await fireEvent.update(screen.getByLabelText('Username'), 'user@example.com')
+     await fireEvent.update(screen.getByLabelText('Password'), 'password123')
+     await fireEvent.click(screen.getByRole('button', { name: /login/i }))
+     
+     expect(mockSubmit).toHaveBeenCalledWith({
+       username: 'user@example.com',
+       password: 'password123'
+     })
+   })
+   ```
+
+## API Integration
+
+1. **Create API client with h3**
