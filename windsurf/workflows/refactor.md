@@ -40,3 +40,12 @@ Please help refactor my TypeScript/Bun codebase with the following steps:
      - Leverage Bun's file system performance optimizations
      - Implement streaming patterns for large data processing
      - Use Bun.serve for high-performance HTTP services
+     - Optimize JSON handling with Bun.JSON utilities
+     - Implement efficient database connections with connection pooling
+   - Implement modern TypeScript patterns:
+     - Use const assertions for immutable values
+     - Apply mapped and conditional types
+     - Leverage template literal types for string manipulation
+     - Use namespace organization when appropriate
+     - Implement builder patterns with method chaining
+     - Create factory functions with proper return type inference
