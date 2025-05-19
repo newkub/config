@@ -480,6 +480,89 @@ This guide outlines best practices for developing Vue.js applications:
        <button @click="closeModal">Close</button>
      </div>
    </template>
+   ```
+
+These best practices ensure maintainable, performant, and accessible Vue applications. Adopt them according to your project's specific needs to improve code quality and developer experience.
+   ```vue
+   <template>
+     <nav aria-label="Main Navigation">
+       <ul>
+         <li><router-link to="/">Home</router-link></li>
+         <li><router-link to="/about">About</router-link></li>
+       </ul>
+     </nav>
+   </template>
+   ```
+
+2. **ARIA attributes when needed**
+   ```vue
+   <template>
+     <button 
+       aria-expanded="false" 
+       aria-controls="menu-content"
+       @click="toggleMenu"
+     >
+       Menu
+     </button>
+     <div 
+       id="menu-content" 
+       :aria-hidden="!isMenuOpen"
+       :class="{ hidden: !isMenuOpen }"
+     >
+       <!-- Menu content -->
+     </div>
+   </template>
+   ```
+
+3. **Keyboard navigation**
+   ```vue
+   <template>
+     <div 
+       tabindex="0" 
+       role="button"
+       @click="activate" 
+       @keyup.enter="activate"
+       @keyup.space="activate"
+     >
+       Clickable Element
+     </div>
+   </template>
+   ```
+
+4. **Focus management**
+   ```vue
+   <script setup>
+   import { ref, onMounted } from 'vue'
+   
+   const modalRef = ref(null)
+   const previousFocus = ref(null)
+   
+   function openModal() {
+     previousFocus.value = document.activeElement
+     // Show modal logic
+     nextTick(() => {
+       modalRef.value.focus()
+     })
+   }
+   
+   function closeModal() {
+     // Hide modal logic
+     previousFocus.value?.focus()
+   }
+   </script>
+   
+   <template>
+     <div 
+       ref="modalRef"
+       role="dialog"
+       aria-labelledby="modal-title"
+       tabindex="-1"
+     >
+       <h2 id="modal-title">Modal Title</h2>
+       <!-- Modal content -->
+       <button @click="closeModal">Close</button>
+     </div>
+   </template>
    ```vue
    <template>
      <div class="flex flex-col gap-md p-lg bg-gray-100 dark:bg-gray-800 rounded-lg">
