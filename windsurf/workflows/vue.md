@@ -468,3 +468,21 @@ This guide outlines best practices for developing Vue.js applications:
        <!-- Menu content -->
      </div>
    </template>
+   ```
+
+3. **Keyboard navigation**
+   ```vue
+   <template>
+     <div 
+       tabindex="0" 
+       role="button"
+       @click="activate" 
+       @keyup.enter="activate"
+       @keyup.space="activate"
+     >
+       Clickable Element
+     </div>
+   </template>
+   ```
+
+4. **Focus management**
