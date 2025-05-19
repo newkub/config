@@ -34,3 +34,6 @@ Please help refactor my code with the following steps:
    - Implement mocking strategies for external dependencies
    
 6. **Modernize codebase**
+   - Update to latest language features and best practices
+   - Replace deprecated methods and libraries
+   - Implement async/await patterns where applicable
