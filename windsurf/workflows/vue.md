@@ -348,59 +348,9 @@ This guide outlines best practices for developing Vue.js applications:
      }
    })
    </script>
-   ```
-## Styling Best Practices
+   ## Styling Best Practices
 
-1. **Global CSS for component styling**
-   ```vue
-   <style>
-   .button {
-     /* Styles apply globally */
-   }
-   </style>
-   ```
-
-2. **CSS variables for theming**
-   ```css
-   :root {
-     --primary-color: #3498db;
-     --secondary-color: #2ecc71;
-     --text-color: #333;
-     --spacing-unit: 8px;
-   }
-   
-   .button {
-     background-color: var(--primary-color);
-     color: white;
-     padding: calc(var(--spacing-unit) * 2);
-   }
-   ```
-
-3. **Utility-first approach with UnoCSS**
-   ```vue
-   <template>
-     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-       Submit
-     </button>
-   </template>
-   ```
-
-4. **UnoCSS configuration**
-   ```ts
-   // unocss.config.ts
-   import { defineConfig, presetWind4, presetIcons } from 'unocss'
-
-   export default defineConfig({
-     presets: [
-       presetWind4(),
-       presetIcons({
-         collections: {
-           mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default)
-         }
-       })
-     ]
-   })
-   ```
+1. **Style Reset for Consistent Rendering**
 
 ## Accessibility
 
