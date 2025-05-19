@@ -388,7 +388,7 @@ This guide outlines best practices for developing Vue.js applications:
 4. **UnoCSS configuration**
    ```ts
    // unocss.config.ts
-   import { defineConfigม } from 'unocss'
+   import { defineConfig, p } from 'unocss'
    import { presetWind4 } from 'unocss'
    import { presetIcons } from 'unocss'
 
