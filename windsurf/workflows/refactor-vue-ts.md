@@ -33,3 +33,14 @@ Please help refactor my codebase with the following steps:
      - Leverage readonly modifiers for immutable reactive data
      - Apply generic constraints to control type parameters
    - Structure code for Vue and Bun optimization:
+     - Utilize Vue's reactivity system efficiently
+     - Implement proper error handling with typed errors
+     - Use TypeScript discriminated unions for state management
+     - Apply dependency injection with provide/inject
+     - Leverage Bun's file system performance optimizations
+     - Implement streaming patterns for large data processing
+     - Use Bun.serve for high-performance HTTP services
+     - Optimize JSON handling with Bun.JSON utilities
+     - Implement efficient UnoCSS configurations
+   - Implement modern Vue/TypeScript patterns:
+     - Use const assertions for immutable values
