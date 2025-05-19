@@ -386,6 +386,23 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 4. **UnoCSS configuration**
+   ```ts
+   // unocss.config.ts
+   import { defineConfig } from 'unocss'
+   import { presetWind4 } from 'unocss'
+   import { presetIcons } from 'unocss'
+
+   export default defineConfig({
+     presets: [
+       presetWind4(),
+       presetIcons({
+         collections: {
+           mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default)
+         }
+       })
+     ]
+   })
+   ```
    ```
 
 ## Accessibility
