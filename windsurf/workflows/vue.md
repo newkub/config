@@ -393,6 +393,18 @@ This guide outlines best practices for developing Vue.js applications:
    ```
 
 4. **Component-specific Styling with UnoCSS Shortcuts**
+   ```ts
+   // uno.config.ts (shortcuts section)
+   export default defineConfig({
+     // Other config...
+     shortcuts: {
+       'btn': 'py-2 px-4 rounded transition font-medium',
+       'btn-primary': 'btn bg-primary hover:bg-primary/90 text-white',
+       'btn-secondary': 'btn bg-secondary hover:bg-secondary/90 text-white',
+       'input-field': 'border border-gray-300 rounded px-3 py-2 outline-none focus:ring-2 focus:ring-primary/50',
+     }
+   })
+   ```
 
 ## Accessibility
 
