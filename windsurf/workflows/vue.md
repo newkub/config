@@ -401,7 +401,6 @@ This guide outlines best practices for developing Vue.js applications:
      ]
    })
    ```
-   ```
 
 ## Accessibility
 
