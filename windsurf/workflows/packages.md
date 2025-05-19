@@ -2,4 +2,4 @@
 description: create packages
 ---
 
-run lint และแก้ไข error ให้ทั้งหมด
+create packages
