@@ -171,3 +171,26 @@ This workflow guides you through creating and publishing packages using modern J
        "types": "./dist/cli.d.ts"
      }
    }
+   ```
+
+6. **Monorepo Support**
+   - Consider using Turborepo or Nx for managing multiple packages
+   - Configure workspaces in package.json for monorepo structure
+
+7. **Changesets**
+   - Add changesets for better versioning in monorepos
+   ```bash
+   bun add -d @changesets/cli
+   bunx changeset init
+   ```
+
+8. **Bundle Analysis**
+   - Add bundle size analysis tools
+   ```bash
+   bun add -d bundlesize
+   ```
+
+9. **Environment Configuration**
+   - Add .env file support
+   ```bash
+   bun add -d dotenv
