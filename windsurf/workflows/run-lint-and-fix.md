@@ -47,10 +47,3 @@ This applies consistent formatting to your entire codebase.
 **Solution**: 
 - Run `bun run format` to apply consistent formatting
 - Configure style rules in `biome.json`
-
-### Unused Variables and Imports
-
-**Issue**: Dead code and unused declarations
-**Solution**: 
-- Enable the `unusedVariables` rule in Biome
-- Manually remove or comment out unused code
