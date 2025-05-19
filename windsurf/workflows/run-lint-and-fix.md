@@ -72,19 +72,3 @@ Customize linting behavior in `biome.json`:
   }
 }
 ```
-
-## Pre-commit Hooks
-
-Set up pre-commit hooks with Lefthook to ensure code quality:
-
-```yaml
-# lefthook.yaml
-pre-commit:
-  commands:
-    lint:
-      run: bun run lint
-    typecheck:
-      run: bun run typecheck
-```
-
-This prevents committing code that doesn't pass linting and type checks.
