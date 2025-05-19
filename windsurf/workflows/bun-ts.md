@@ -30,3 +30,15 @@ Please help refactor my codebase with the following structured approach:
   ```
 
 - **Essential Scripts**
+  ```json
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts --target node --outdir dist",
+    "start": "bun run dist/index.js",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "lint": "biome check .",
+    "lint:fix": "biome check --apply .",
+    "typecheck": "tsc --noEmit",
+    "format": "biome format --write ."
+  }
