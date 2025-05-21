@@ -27,3 +27,14 @@
 				"noAccumulatingSpread": "error",
 				"noBarrelFile": "error",
 				"noDelete": "error",
+				"useTopLevelRegex": "error",
+				"noReExportAll": "error"
+			},
+			"security": {	
+				"noDangerouslySetInnerHtml": "error",
+				"noDangerouslySetInnerHtmlWithChildren": "error",
+				"noGlobalEval": "error"
+			},
+			"complexity": {
+				"noBannedTypes": "error",
+				"noEmptyTypeParameters": "error",
