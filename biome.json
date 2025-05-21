@@ -28,3 +28,43 @@
 				"noBarrelFile": "error",
 				"noDelete": "error",
 				"useTopLevelRegex": "error",
+				"noReExportAll": "error"
+			},
+			"security": {	
+				"noDangerouslySetInnerHtml": "error",
+				"noDangerouslySetInnerHtmlWithChildren": "error",
+				"noGlobalEval": "error"
+			},
+			"complexity": {
+				"noBannedTypes": "error",
+				"noEmptyTypeParameters": "error",
+				"noExcessiveCognitiveComplexity": "error",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": []
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"useNodejsImportProtocol": "off"
+			},
+			"performance": {
+				"noAccumulatingSpread": "error",
+				"noBarrelFile": "error",
+				"noDelete": "error",
+				"useTopLevelRegex": "error",
