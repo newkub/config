@@ -26,7 +26,8 @@
 			"performance": {
 				"noAccumulatingSpread": "off",
 				"noBarrelFile": "off",
-				"noDelete"
+				"noDelete".
+				"m"
 			},
 			"security": {
 				"noUnsafeRegex": "off"
