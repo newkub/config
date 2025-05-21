@@ -22,8 +22,8 @@
 			"recommended": true,
 			"style": {
 				"useNodejsImportProtocol": "off"
-			}ม
-	
+			},
+			""
 		}
 	}
 }
