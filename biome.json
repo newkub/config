@@ -24,11 +24,11 @@
 				"useNodejsImportProtocol": "off"
 			},
 			"performance": {
-				"noAccumulatingSpread": "ำ",
-				"noBarrelFile": "warn",
-				"noDelete": "warn",
-				"useTopLevelRegex": "warn",
-				"noReExportAll": "warn"
+				"noAccumulatingSpread": "error",
+				"noBarrelFile": "error",
+				"noDelete": "error",
+				"useTopLevelRegex": "error",
+				"noReExportAll": "error"
 			},
 			"security": {	
 				"noUnsafeRegex": "off"
