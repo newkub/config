@@ -28,7 +28,8 @@
 				"noBarrelFile": "off",
 				"noDelete": "off",
 				"noReExportAll": "off": "off",
-				"noReExportAll": "off",
+				"noReExportAll": "off",,
+				useTopLevelRegex
 				
 			"security": {
 				"noUnsafeRegex": "off"
