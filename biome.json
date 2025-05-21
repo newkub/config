@@ -25,7 +25,9 @@
 			},
 			"performance": {
 				"noExplicitAny": "off"
-				
+			},
+			"security": {
+				"noUnsafeRegex": "off"
 			}
 		}
 	}
