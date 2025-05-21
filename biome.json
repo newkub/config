@@ -65,3 +65,10 @@
 				"useFlatMap": "error",
 				"useLiteralKeys": "error",
 				"useOptionalChain": "error",
+				"useRegexLiterals": "error",
+				"useSimpleNumberKeys": "error",
+				"useSimplifiedLogicExpression": "error"
+			}
+		}
+	}
+}
