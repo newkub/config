@@ -25,7 +25,7 @@
 			},
 			"performance": {
 				"noAccumulatingSpread": "off",
-				"noBarrelFile": "off"
+				"noBarrelFile": "off",
 			},
 			"security": {
 				"noUnsafeRegex": "off"
