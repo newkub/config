@@ -31,7 +31,7 @@
 				"noReExportAll": "error"
 			},
 			"security": {	
-				"noUnsafeRegex": "error"
+				"noUnsafeRegex": "error",
 			}
 		}
 	}
