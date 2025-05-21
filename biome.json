@@ -24,7 +24,7 @@
 				"useNodejsImportProtocol": "off"
 			},
 			"performance": {
-				"noExplicitAny": "off"
+				"noAccumulatingSpread": "off"
 			},
 			"security": {
 				"noUnsafeRegex": "off"
