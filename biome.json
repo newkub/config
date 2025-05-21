@@ -218,3 +218,9 @@
 				"useStrictMode": "error",
 				"useTrimStartEnd": "error",
 				"useValidAutocomplete": "error",
+				"useValidForDirection": "error",
+				"useYield": "error"
+			}
+		}
+	}
+}
