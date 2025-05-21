@@ -13,3 +13,18 @@
 		"enabled": true,
 		"indentStyle": "tab"
 	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"useNodejsImportProtocol": "off",
+				"noArgumentsDisallow": "error",
+				"noCommaOperator": "error",
+				"noDefaultExport": "error",
+				"noDoneCallback": "error",
+				"noImplicitBoolean": "error",
+				"noInferrableTypes": "error",
