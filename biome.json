@@ -29,8 +29,7 @@
 				"noDelete": "off",
 				"useTopLevelRegex": "off",
 				"noReExportAll": "off"
-				
-				
+			},
 			"security": {
 				"noUnsafeRegex": "off"
 			},
