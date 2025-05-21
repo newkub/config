@@ -32,7 +32,7 @@
 			},
 			"security": {	
 				"noUnsafeRegex": "error",
-				"noDangerouslySetInnerHtmlWithChildren": "error"
+				"noDangerouslySetInnerHtmlWithChildren": "error",
 			}
 		}
 	}
