@@ -30,7 +30,7 @@
 				"useTopLevelRegex": "off",
 				"noReExportAll": "off"
 			},
-			"security": {
+			"security": {	
 				"noUnsafeRegex": "off"
 			},
 		}
