@@ -27,7 +27,7 @@
 				"noAccumulatingSpread": "off",
 				"noBarrelFile": "off",
 				"noDelete": "off",
-				"useTopLevelRegex": "off"
+				"useTopLevelRegex": "off	"
 				"noReExportAll": "off",,
 				useTopLevelRegex
 				
