@@ -27,13 +27,13 @@
 				"noAccumulatingSpread": "off",
 				"noBarrelFile": "off",
 				"noDelete": "off",
-				"noReExportAll": "off": "off",
+				"useTopLevelRegex": "off"
 				"noReExportAll": "off",,
 				useTopLevelRegex
 				
 			"security": {
 				"noUnsafeRegex": "off"
-			}
+			},
 		}
 	}
 }
