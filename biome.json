@@ -21,7 +21,6 @@
 		"rules": {
 			"recommended": true,
 			"style": {
-				"useNodejsImportProtocol": "off",
 				"noArgumentsDisallow": "error",
 				"noCommaOperator": "error",
 				"noDefaultExport": "error",
