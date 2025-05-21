@@ -33,6 +33,7 @@
 			"security": {	
 				"noUnsafeRegex": "error",
 				"noDangerouslySetInnerHtmlWithChildren": "error",
+				noGlobalEval
 			}
 		}
 	}
