@@ -24,7 +24,7 @@
 				"useNodejsImportProtocol": "off"
 			},
 			"performance": {
-				"noAccumulatingSpread": "off",
+				"noAccumulatingSpread": "",
 				"noBarrelFile": "off",
 				"noDelete": "off",
 				"useTopLevelRegex": "off",
