@@ -22,7 +22,7 @@
 			"recommended": true,
 			"style": {
 				"useNodejsImportProtocol": "off"
-			},
+			},		"per",
 			""
 		}
 	}
