@@ -29,6 +29,7 @@
 				"noDelete": "error",
 				"useTopLevelRegex": "error",
 				"noReExportAll": "error"
+				"noGlobalEval": "error"
 			},
 			"security": {	
 				"noUnsafeRegex": "error",
