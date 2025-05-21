@@ -27,7 +27,7 @@
 				"noAccumulatingSpread": "off",
 				"noBarrelFile": "off",
 				"noDelete".
-				"m"
+				"no"
 			},
 			"security": {
 				"noUnsafeRegex": "off"
