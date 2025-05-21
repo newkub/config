@@ -22,8 +22,11 @@
 			"recommended": true,
 			"style": {
 				"useNodejsImportProtocol": "off"
-			},		"per",
-			""
+			},
+			"performance": {
+				"noExplicitAny": "off"
+				
+			}
 		}
 	}
 }
