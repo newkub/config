@@ -3,3 +3,4 @@
 - ควร refactor อะไรไปใช้ composables หรือ components บ้าง
 - อ่านทุกไฟล์ ทำความเข้าใจ และควรทำอย่างไรถึงจะดี ไม่ซ้ำซ้อน @file @file
 - @file ใช้ @file @folder
+- ทำ uui
