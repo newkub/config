@@ -1,2 +1,2 @@
 -  ดูไฟล์ที่ import มาให้ ให้ลบสิ่งที่ซ้ำซ้อน และทำสิ่งที่ควรจะเป็น
-- run lint ใน package.json และแก้ไข error ทั้งหมด
+- run lint ใน package.json และแก้ไข error ทั้งหมดโดยไม่
