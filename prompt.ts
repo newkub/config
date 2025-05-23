@@ -5,4 +5,4 @@
 - @file ใช้ @file @folder
 - ทำ uxui ให้ดีกว่านี้
 - ซ้ำซ้อนกันไหม
-- เขียนให้ดีตาม best pr
+- เขียนให้ดีตาม best practicsาม best pr
