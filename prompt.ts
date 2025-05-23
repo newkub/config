@@ -2,4 +2,4 @@
 - run lint ใน package.json และแก้ไข error ทั้งหมดโดยไม่มีเหลือ
 - ควร refactor อะไรไปใช้ composables หรือ components บ้าง
 - อ่านทุกไฟล์ ทำความเข้าใจ และควรทำอย่างไรถึงจะดี ไม่ซ้ำซ้อน @file @file
-- @fil
+- @file ใช้ 
