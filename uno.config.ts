@@ -33,6 +33,8 @@ export default defineConfig({
             background: 'var(--background-light)',
             text: 'var(--text-light)',
             alert: 'var(--alert-light)',
+                        brand: 'var(--brand-light)',
+
             error: 'var(--error-light)',
             success: 'var(--success-light)',
         },
