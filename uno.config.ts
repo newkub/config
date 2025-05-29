@@ -33,12 +33,9 @@ export default defineConfig({
             background: 'var(--background-light)',
             brand: 'var(--brand-light)',
             text: 'var(--text-light)',
-                light: 'var(--text-light)',
-                dark: 'var(--text-dark)',
-            },
-            alert: {
-                light: 'var(--alert-light)',
-                dark: 'var(--alert-dark)',
+            alert: 'var(--alert-light)',
+            error: 'var(--error-light)',
+            success: 'var(--success-light)',
             },
             error: {
                 light: 'var(--error-light)',
