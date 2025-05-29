@@ -30,9 +30,9 @@ export default defineConfig({
     transformers: [transformerVariantGroup()],
     theme: {
         colors: {
-            background: 'var(--background-light)',
-            c: 'var(--text-light)',
-            alert: 'var(--alert-light)',
+            color-background: 'var(--background-light)',
+            color-c: 'var(--text-light)',
+            color-alert: 'var(--alert-light)',
             color-brand: 'var(--brand-light)',
             color-error: 'var(--error-light)',
             color-success: 'var(--success-light)',
