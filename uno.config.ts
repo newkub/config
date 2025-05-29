@@ -34,12 +34,22 @@ export default defineConfig({
             background: 'hsl(var(--background-light))',
             text: 'hsl(var(--text-light))',
             brand: {
-                light: 'hsl(var(--brand-light))',
+                b: 'hsl(var(--brand-light))',
                 dark: 'hsl(var(--brand-dark))',
             },
             alert: {
+                light: {
                 light: 'hsl(var(--alert-light))',
                 dark: 'hsl(var(--alert-dark))',
+            }    dark: 'hsl(var(--alert-dark))',
+            },
+            error: {
+                light: 'hsl(var(--error-light))',
+                dark: 'hsl(var(--error-dark))',
+            },
+            success: {
+                light: 'hsl(var(--success-light))',
+                dark: 'hsl(var(--success-dark))',
             },
             error: {
                 light: 'hsl(var(--error-light))',
