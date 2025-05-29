@@ -31,8 +31,8 @@ export default defineConfig({
     theme: {
         
         colors: {
-            Bbackground: 'hsl(var(--background-light))',
-            Text: 'hsl(var(--text-light))',
+            background: 'hsl(var(--background-light))',
+            text: 'hsl(var(--text-light))',
             brand: {
                 light: 'hsl(var(--brand-light))',
                 dark: 'hsl(var(--brand-dark))',
