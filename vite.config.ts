@@ -4,7 +4,6 @@ import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import vueDevTools from "vite-plugin-vue-devtools";
 import AutoImport from "unplugin-auto-import/vite";
-import UnpluginUnused from 'unplugin-unused/vite';
 import checker from 'vite-plugin-checker';
 import TurboConsole from 'unplugin-turbo-console/vite'
 
