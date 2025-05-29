@@ -18,6 +18,8 @@ export default defineConfig({
         }),
         UnoCSS(),
         ViteImageOptimizer({}),
-        TurboConsole(),
+        TurboConsole(
+            
+        ),
     ],
 });
