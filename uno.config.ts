@@ -29,3 +29,17 @@ export default defineConfig({
     ],
     transformers: [
         transformerVariantGroup(),
+        transformerCompileClass()
+    ],
+    theme: {
+        colors: {
+            Background: 'hsl(var(--background-light))',
+            Text: 'hsl(var(--text-light))',
+            Alert: 'hsl(var(--alert-light))',
+            Brand: 'hsl(var(--brand-light))',
+            Error: 'hsl(var(--error-light))',
+            Success: 'hsl(var(--success-light))',
+        },
+    },
+    shortcuts: [],
+});
