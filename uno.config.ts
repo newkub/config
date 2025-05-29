@@ -33,6 +33,7 @@ export default defineConfig({
         colors: {
             Background: 'hsl(var(--background-light))',
             Text: 'hsl(var(--text-light))',
+            
             Alert: 'hsl(var(--alert-light))',
             Brand: 'hsl(var(--brand-light))',
             Error: 'hsl(var(--error-light))',
