@@ -38,6 +38,10 @@ export default defineConfig({
             Error: 'hsl(var(--error-light))',
             Success: 'hsl(var(--success-light))',
         },
+        breakpoints: {
+            sm: '320px',
+            md: '640px',
+        },
     },
     shortcuts: [],
 });
