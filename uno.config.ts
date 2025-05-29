@@ -37,9 +37,18 @@ export default defineConfig({
                 light: 'hsl(var(--brand-light))',
                 dark: 'hsl(var(--brand-dark))',
             },
-            Alert: 'hsl(var(--alert-light))',
-            Error: 'hsl(var(--error-light))',
-            Success: 'hsl(var(--success-light))',
+            alert: {
+                light: 'hsl(var(--alert-light))',
+                dark: 'hsl(var(--alert-dark))',
+            },
+            error: {
+                light: 'hsl(var(--error-light))',
+                dark: 'hsl(var(--error-dark))',
+            },
+            success: {
+                light: 'hsl(var(--success-light))',
+                dark: 'hsl(var(--success-dark))',
+            },
            
         },
         breakpoints: {
