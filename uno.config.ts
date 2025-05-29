@@ -31,7 +31,7 @@ export default defineConfig({
     theme: {
         colors: {
             Background: 'var(--background-light)',
-            colorText: 'var(--text-light)',
+            coloText: 'var(--text-light)',
             colorAlert: 'var(--alert-light)',
             colorBrand: 'var(--brand-light)',
             colorError: 'var(--error-light)',
