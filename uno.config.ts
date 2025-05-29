@@ -30,6 +30,14 @@ export default defineConfig({
     ],
     theme: {
         dark: {
+            colors: {
+                Background: 'hsl(var(--background-dark))',
+                Text: 'hsl(var(--text-dark))',
+                Alert: 'hsl(var(--alert-dark))',
+                Brand: 'hsl(var(--brand-dark))',
+                Error: 'hsl(var(--error-dark))',
+                Success: 'hsl(var(--success-dark))',
+            },
         },
         colors: {
             Background: 'hsl(var(--background-light))',
