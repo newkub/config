@@ -9,7 +9,6 @@ import TurboConsole from 'unplugin-turbo-console/vite'
 export default defineConfig({
     plugins: [
         vueDevTools(),
-        AutoImport(),
         tsconfigPaths(),
         checker({
             typescript: true,
