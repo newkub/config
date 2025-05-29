@@ -34,12 +34,9 @@ export default defineConfig({
             Background: 'hsl(var(--background-light))',
             Text: 'hsl(var(--text-light))',
             brand: {
-                
+
             }
-            Alert: 'hsl(var(--alert-light))',
-            Brand: 'hsl(var(--brand-light))',
-            Error: 'hsl(var(--error-light))',
-            Success: 'hsl(var(--success-light))',
+           
         },
         breakpoints: {
             sm: '320px',
