@@ -29,7 +29,8 @@ export default defineConfig({
         transformerCompileClass()
     ],
     theme: {
-        
+        dark: {
+        },
         colors: {
             Background: 'hsl(var(--background-light))',
             Text: 'hsl(var(--text-light))',
