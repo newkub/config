@@ -28,7 +28,7 @@ export default defineConfig({
         }),
     ],
     transformers: [transformerVariantGroup(),
-        transformerDirectives
+        transformerCompileClass 
     ],
     theme: {
         colors: {
