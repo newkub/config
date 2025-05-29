@@ -41,6 +41,7 @@ export default defineConfig({
         breakpoints: {
             sm: '320px',
             md: '640px',
+            
         },
     },
     shortcuts: [],
