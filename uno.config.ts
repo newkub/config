@@ -39,10 +39,10 @@ export default defineConfig({
             },
             alert: {
                 alert: 'hsl(var(--alert-light))',
-                dark: 'hsl(var(--alert-dark))',
+                error: 'hsl(var(--alert-dark))',
             },
             error: {
-                light: 'hsl(var(--error-light))',
+                error: 'hsl(var(--error-light))',
                 dark: 'hsl(var(--error-dark))',
             },
             success: {
