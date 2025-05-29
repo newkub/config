@@ -1,6 +1,5 @@
 import { defineConfig, presetIcons, presetWind4, transformerVariantGroup, presetWebFonts, transformerCompileClass } from "unocss";
 import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local';
-import { presetRemToPx } from '@unocss/preset-rem-to-px';
 
 export default defineConfig({
     presets: [
