@@ -27,7 +27,7 @@ export default defineConfig({
             })
         }),
     ],
-    transformers: [transformerVariantGroup()],
+    transformers: [transformerVariantGroup(),],
     theme: {
         colors: {
             Background: 'var(--background-light)',
