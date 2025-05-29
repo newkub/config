@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, presetWind4, transformerVariantGroup, presetWebFonts, transformerCompileClassม } from "unocss";
+import { defineConfig, presetIcons, presetWind4, transformerVariantGroup, presetWebFonts, transformerCompileClassม  } from "unocss";
 import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local';
 import { presetRemToPx } from '@unocss/preset-rem-to-px';
 
