@@ -19,8 +19,7 @@ export default defineConfig({
         UnoCSS(),
         ViteImageOptimizer({}),
         TurboConsole(
-            highlight: true,
-            launchEditor: true,
+           
         ),
     ],
 });
