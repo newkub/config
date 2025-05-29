@@ -36,15 +36,6 @@ export default defineConfig({
             alert: 'var(--alert-light)',
             error: 'var(--error-light)',
             success: 'var(--success-light)',
-            },
-            error: {
-                light: 'var(--error-light)',
-                dark: 'var(--error-dark)',
-            },
-            success: {
-                light: 'var(--success-light)',
-                dark: 'var(--success-dark)',
-            },
         },
     },
     shortcuts: [],
