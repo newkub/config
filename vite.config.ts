@@ -2,7 +2,6 @@ import UnoCSS from "unocss/vite";
 import tsconfigPaths from 'vite-tsconfig-paths'
 import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
-import vueDevTools from "vite-plugin-vue-devtools";
 import checker from 'vite-plugin-checker';
 import TurboConsole from 'unplugin-turbo-console/vite'
 
