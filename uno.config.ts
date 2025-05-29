@@ -35,7 +35,7 @@ export default defineConfig({
             text: 'hsl(var(--text-light))',
             brand: {
                 brand: 'hsl(var(--brand-light))',
-                error: 'hsl(var(--brand-dark))',
+                error: 'hsl(var(--brand-e))',
                 warning: 'hsl(var(--brand-dark))',
                 er: 'hsl(var(--brand-dark))',
                 success: 'hsl(var(--brand-dark))',
