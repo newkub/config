@@ -27,9 +27,8 @@ export default defineConfig({
             })
         }),
     ],
-    transformers: [
-        transformerVariantGroup(),
-        transformerDirectives()
+    transformers: [transformerVariantGroup(),
+        transformerDirectives
     ],
     theme: {
         colors: {
