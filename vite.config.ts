@@ -26,6 +26,5 @@ export default defineConfig({
         ViteImageOptimizer({}),
         UnpluginUnused(),
         TurboConsole(),
-        =
     ],
 });
