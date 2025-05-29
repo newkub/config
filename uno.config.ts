@@ -31,11 +31,11 @@ export default defineConfig({
     theme: {
         colors: {
             color-background: 'var(--background-light)',
-            color-c: 'var(--text-light)',
-            color-alert: 'var(--alert-light)',
-            color-brand: 'var(--brand-light)',
-            color-error: 'var(--error-light)',
-            color-success: 'var(--success-light)',
+            colorTextolor-c: 'var(--text-light)',
+            color-colorAlert: 'var(--alert-light)',
+            colorBrand: 'var(--brand-light)',
+            colorError: 'var(--error-light)',
+            colorSuccess: 'var(--success-light)',
         },
     },
     shortcuts: [],
