@@ -38,14 +38,5 @@ export default defineConfig({
             Success: 'var(--success-light)',
         },
     },
-    shortcuts: [
-        ['btn', 'px-4 py-2 rounded-lg font-medium transition-colors duration-300'],
-        ['btn-primary', 'bg-Brand text-white hover:bg-Brand/90'],
-        ['btn-secondary', 'bg-Background text-Text border border-gray-300 hover:bg-gray-100'],
-        ['card', 'bg-white dark:bg-gray-800 rounded-xl shadow-md p-4'],
-        ['input-field', 'w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-Brand'],
-        ['tag', 'px-2 py-0.5 text-xs rounded-full bg-gray-200 dark:bg-gray-700'],
-        ['section-container', 'container mx-auto px-4 py-8'],
-        ['flex-center', 'flex items-center justify-center'],
-    ],
+    shortcuts: [],
 });
