@@ -20,6 +20,7 @@ export default defineConfig({
         ViteImageOptimizer({}),
         TurboConsole(
             highlight: true,
+            
         ),
     ],
 });
