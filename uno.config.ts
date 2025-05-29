@@ -30,7 +30,7 @@ export default defineConfig({
     transformers: [transformerVariantGroup()],
     theme: {
         colors: {
-            background: var(--background-light)
+            background: 'var(--background-light)',
             brand: {
                 light: 'var(--brand-light)',
                 dark: 'var(--brand-dark)',
