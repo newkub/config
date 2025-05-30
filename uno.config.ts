@@ -3,7 +3,7 @@ import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local';
 
 export default defineConfig({
     presets: [
-        presetW(),
+        presetWind4(),
         presetTagify
         presetIcons({
             collections: {
