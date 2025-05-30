@@ -4,7 +4,6 @@ import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local';
 export default defineConfig({
     presets: [
         presetMini(),
-        presetTagify,
         presetIcons({
             collections: {
                 mdi: () =>
