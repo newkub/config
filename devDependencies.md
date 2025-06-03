@@ -7,4 +7,4 @@
 - turbo
 - taze
 - dprint
-- o
+- oxlint
