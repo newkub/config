@@ -8,4 +8,4 @@
 - taze
 - dprint
 - oxlint
-ข
+- https://www.npmjs.com/package/vite-imagetools
