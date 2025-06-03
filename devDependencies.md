@@ -6,4 +6,5 @@
 - vite
 - turbo
 - taze
-- 
+- dprint
+- o
