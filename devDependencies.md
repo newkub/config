@@ -5,4 +5,4 @@
 - unplugin-unused
 - vite
 - turbo
-- tail
+- taz
