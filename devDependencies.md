@@ -9,4 +9,4 @@
 - dprint
 - oxlint
 - https://www.npmjs.com/package/vite-imagetools
-ข
+- https://github.com/rezrah/img-resizer-cli
