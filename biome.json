@@ -1,4 +1,29 @@
 {
-	extends": "https://raw.githubusercontent.com/newkub/config/refs/heads/main/biome.json
-	"extends": "./node	_modules/@biomejs/biome/configuration_schema.json"
+	
+	""$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": ["auto-imports.d.ts"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"useNodejsImportProtocol": "off"
+			}
+		}
+	}"
 }
