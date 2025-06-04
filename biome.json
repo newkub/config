@@ -1,4 +1,4 @@
 {
-	
+	extends": "https://raw.githubusercontent.com/newkub/config/refs/heads/main/biome.json
 	"extends": "./node_modules/@biomejs/biome/configuration_schema.json"
 }
