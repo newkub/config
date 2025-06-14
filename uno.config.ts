@@ -31,7 +31,7 @@ export default defineConfig({
         
         colors: {
             background: 'hsl(var(--background))',
-            "background-blo": 'hsl(var(--background))',
+            "background-block": 'hsl(var(--background-bloc))',
             text: 'hsl(var(--text))',
             brand: {
                 brand: 'hsl(var(--brand))',
