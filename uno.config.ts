@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, presetMini, transformerVariantGroup, presetWebFonts, transformerCompileClass } from "unocss";
+import { defineConfig, presetIcons, presetWind4, transformerVariantGroup, presetWebFonts, transformerCompileClass } from "unocss";
 import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local';
 
 export default defineConfig({
