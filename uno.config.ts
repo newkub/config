@@ -51,7 +51,7 @@ export default defineConfig({
             lg: "var(--spacing-lg)",
         },
         breakpoints: {
-            s: '320px',
+            sm: '320px',
             md: '640px',
             lg: '768px',
             xl: '1024px',
