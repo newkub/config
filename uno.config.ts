@@ -38,9 +38,7 @@ export default defineConfig({
                 error: 'hsl(var(--brand-error))',
                 warning: 'hsl(var(--brand-warning))',
                 success: 'hsl(var(--brand-success))',
-            },
-    
-           
+            },    
         },
         breakpoints: {
             sm: '320px',
