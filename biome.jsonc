@@ -7,13 +7,10 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["auto-imports.d.ts"]
+		
 	},
 	"formatter": {
 		"enabled": true,
-		"html": {
-			"enabled": true
-		}
 	},
 	"organizeImports": {
 		"enabled": true
@@ -24,9 +21,5 @@
 			"recommended": true
 		}
 	},
-	 "html": {
-		"formatter": {
-		"enabled": true
-		}
   }
 }
