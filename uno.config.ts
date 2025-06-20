@@ -39,7 +39,7 @@ export default defineConfig({
                 warning: 'hsl(var(--brand-warning))',
                 success: 'hsl(var(--brand-success))',
             },
-           
+    
            
         },
         breakpoints: {
