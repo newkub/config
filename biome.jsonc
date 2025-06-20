@@ -10,7 +10,7 @@
 		
 	},
 	"formatter": {
-		"enabled": true,
+		"enabled": true
 	},
 	"organizeImports": {
 		"enabled": true
