@@ -40,6 +40,16 @@ export default defineConfig({
                 success: 'hsl(var(--brand-success))',
             },    
         },
+        borderRadius: {
+			sm: "var(--rounded-sm)",
+			DEFAULT: "var(--rounded)",
+			lg: "var(--rounded-lg)",
+		},
+		spacing: {
+			sm: "var(--spacing-sm)",
+			DEFAULT: "var(--spacing)",
+			lg: "var(--spacing-lg)",
+		},
         breakpoints: {
             sm: '320px',
             md: '640px',
