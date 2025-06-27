@@ -1,12 +1,14 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"ignore": [
+		".nuxt"
+	],
 	"plugins": [
 		"import",
 		"oxc",
 		"react",
 		"unicorn",
 		"react-perf",
-		"jsx",
 		"vitest",
 		"jsx-a11y",
         "nextjs",
