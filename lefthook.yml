@@ -4,7 +4,7 @@ pre-commit:
     - name: install
       run: bun install
     - name: format
-      run: bun format --
+      run: bun format --staged
     - name: gitleaks
       run: gitleaks protect --verbose
 
