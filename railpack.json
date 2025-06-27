@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "provider": "railway",
+  "steps": {
+    "install": {
+      "commands": ["bun install"]
+    },
+    "build": {
+      "inputs": [{ "step": "install" }],
+      "commands": ["...", "./my-custom-build.sh"]
+    }
+  },
+  "deploy": {
+    "startCommand": "node dist/index.js",
+    "base": {
+      "image": "ghcr.io/railwayapp/railpack-runtime:latest"
+    },
+    "inputs": [
+      {
+        "step": "packages:mise",
+        "include": [
+          "/mise/shims",
+          "/mise/installs"
+        ]
+      },
+      {
+        "step": "build",
+        "include": ["."]
+      }
+    ]
+  }
+}
