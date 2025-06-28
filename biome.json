@@ -15,7 +15,7 @@
     "formatter": {
         "enabled": true
     },
-	"plugins": ["./vue.grit"],
+	//"plugins": ["./vue.grit"],
     "linter": {
         "enabled": true,
         "rules": {
@@ -26,7 +26,7 @@
             "react": "recommended",
             "next": "recommended",
             "project": "recommended",
-            "test": "vitest"
+            "test": "all"
         }
     }
 }
