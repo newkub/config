@@ -1,0 +1,10 @@
+{
+  "name": "@config/tsconfig",
+  "version": "1.0.0",
+  "description": "Shared configuration for Wrikka projects",
+  "main": "tsconfig.json",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

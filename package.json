@@ -1,20 +1,28 @@
 {
-	"name": "koai",
-	"version": "0.1.0",
-	"type": "module",
-	"scripts": {
-		"test": "bun test || true",
-		"prepare": "lefthook install",
-        "format": "biome format --write .",
-		"lint": "biome lint --lint . && tsc --noEmit",
-		"check:knip": "knip --no-gitignore --production",
-        "update": "taze -w"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@types/node": "^22.15.2",
-		"bun-types": "latest",
-		"knip": "^5.50.5",
-		"taze": "^19.0.4"
-	}
+  "name": "koai",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./base": "./base.js",
+    "./next-js": "./next.js",
+    "./react-internal": "./react-internal.js",
+    "./vite-react": "./eslint/vite-react.js",
+    "./vite-vue": "./eslint/vite-vue.js",
+    "./biome": "./eslint/biome.json"
+  },
+  "scripts": {
+    "test": "bun test || true",
+    "prepare": "lefthook install",
+    "format": "biome format --write .",
+    "lint": "biome lint --lint . && tsc --noEmit",
+    "check:knip": "knip --no-gitignore --production",
+    "update": "taze -w"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@types/node": "24.0.5",
+    "@types/bun": "latest",
+    "knip": "^5.61.2",
+    "taze": "^19.1.0"
+  }
 }

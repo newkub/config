@@ -1,0 +1,6 @@
+{
+    "name": "@config/biome",
+    "devDependencies": {
+        "@biomejs/biome": "latest"
+    }
+}

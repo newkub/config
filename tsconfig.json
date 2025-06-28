@@ -1,25 +1,81 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Modern Full Stack Configuration (2025)",
+  
   "compilerOptions": {
+    /* Modern ECMAScript Features */
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "esModuleInterop": true,
+    "moduleDetection": "auto",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    
+    /* Advanced Type Safety */
     "strict": true,
-    "declaration": true,
-    "outDir": "dist",
-    "skipLibCheck": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "useUnknownInCatchVariables": true,
+    
+    /* Module Resolution */
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./types/*"]
+    },
+    "allowImportingTsExtensions": true,
+    "resolvePackageJsonExports": true,
+    "resolvePackageJsonImports": true,
+    
+    /* Bundler & Runtime Optimization */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "allowJs": true,
+    "verbatimModuleSyntax": true,
+    
+    /* Development Experience */
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "removeComments": false,
+    
+    /* JSX (Modern Frameworks) */
     "jsx": "preserve",
+    "jsxImportSource": "react",
+    
+    /* Build Performance */
     "incremental": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "composite": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "disableSolutionSearching": true,
+    "disableReferencedProjectLoad": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  
+  "include": [
+    "**/*.ts", 
+    "**/*.tsx", 
+    "**/*.mts", 
+    "**/*.cts",
+    "**/*.vue",
+    "**/*.jsx"
+  ],
+  
+  "exclude": [
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/.*",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/*.bench.*",
+    "**/__tests__/**"
+  ],
+  
+  "references": [
+    { "path": "./client" },
+    { "path": "./server" },
+    { "path": "./shared" }
+  ]
 }

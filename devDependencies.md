@@ -8,5 +8,6 @@
 - taze
 - dprint
 - oxlint
+- node modules inspector
 - https://www.npmjs.com/package/vite-imagetools
 - https://github.com/rezrah/img-resizer-cli

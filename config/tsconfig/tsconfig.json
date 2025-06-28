@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    /* Modern JS/TS Support */
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
+    
+    /* Module Resolution */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"],
+      "~/*": ["*"],
+      "#/*": ["*"],
+      "@config/*": ["../config/*"]
+    },
+    
+    /* Interop & Checks */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    /* Type Support */
+    "types": ["vite/client", "vitepress/client"],
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    
+    /* Output */
+    "noEmit": true,
+    "incremental": true,
+    "composite": true
+  },
+  
+  "include": [
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.tsx",
+    "**/*.vue",
+    "**/*.mts",
+    ".vitepress/config.mts"
+  ],
+  
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts"
+  ],
+  
+  "references": [
+    { "path": "../biome" }
+  ]
+}

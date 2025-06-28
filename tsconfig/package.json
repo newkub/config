@@ -1,0 +1,19 @@
+{
+  "name": "@config/tsconfig",
+  "version": "0.1.0",
+  "private": true,
+  "main": "tsconfig.json",
+  "files": [
+    "tsconfig.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "bun-types": "^1.2.17"
+  },
+  "keywords": [
+    "typescript",
+    "tsconfig"
+  ]
+}

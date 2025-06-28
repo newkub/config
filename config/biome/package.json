@@ -1,0 +1,10 @@
+{
+  "name": "@config/biome",
+  "version": "1.0.0",
+  "description": "Shared configuration for Wrikka projects",
+  "main": "biome.json",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
