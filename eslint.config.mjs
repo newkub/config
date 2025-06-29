@@ -7,7 +7,6 @@ export default tseslint.config({
   files: ["**/*.ts"],
   extends: [
     vueMacros,
-    functional.configs.externalTypeScriptRecommended,
     functional.configs.recommended,
     functional.configs.stylistic,
     // your other plugin configs here
