@@ -21,15 +21,15 @@
         "rules": {
             "recommended": true,
             "correctness": {
-                "noUnusedVariables": "off"
+                "noUnusedVariables": "off",
+                "noUnusedImports": "off"
             }
         },
         "domains": {
-            "vue": "recommended",
-            "react": "recommended",
-            "next": "recommended",
+            "react": "none",
+            "next": "none",
             "project": "recommended",
-            "test": "all"
+            "test": "recommended"
         }
     }
 }
