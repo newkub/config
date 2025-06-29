@@ -1,23 +1,15 @@
-// eslint.config.js
-import vueMacros from '@vue-macros/eslint-config';
-import functional from "eslint-plugin-functional";
-import tseslint from "typescript-eslint";
+import vueMacros from '@vue-macros/eslint-config'
+import functional from 'eslint-plugin-functional';
 
-export default tseslint.config({
-  files: ["**/*.ts"],
-  extends: [
-    vueMacros,
-    functional.configs.recommended,
-    functional.configs.stylistic,
-    // your other plugin configs here
-  ],
-  languageOptions: {
-    parser: tseslint.parser,
-    parserOptions: {
-      projectService: true,
-    },
+export default [
+
+  vueMacros,
+  functional.configs.recommended,
+  functional.configs.stylistic,
+  {
+    ignores: ['**/.vitepress/cache/**', '**/.obsidian/**']
   },
-  rules: {
-    // any rule configs here
-  },
-});
+  {
+    files: ['**/.vitepress/**/*.vue']
+  }
+]
